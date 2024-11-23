@@ -190,10 +190,69 @@
             object-fit: contain;
             flex-shrink: 0;
         }
+
+
+
+
+ #navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0rem 3rem;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 100vw;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+#navbar ul a {
+  font-family: cursive;
+  display: inline-block;
+  padding: 1.2rem 2rem;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+#navbar ul a:hover {
+    background-color: hsl(188, 63%, 37%);
+  color: black;
+}
     </style>
 </head>
 <body>
-    <h1>Certifications</h1>
+    <header id="about">
+        <nav id="navbar">
+          <ul>
+            <li><a href="about_me.html" target="_blank">About</a></li>
+            <li><a href="projects_and_academic_work.html" target="_blank">Projects</a></li>
+            <li><a href="certifications.html" target="_blank">Certifications</a></li>
+            <li><a href="achievement_participation.html" target="_blank">Accomplishments</a></li>
+            <li><a href="future_prospects.html" target="_blank">Future Prospects</a></li>
+            <li><a href="https://shivduttchoubey.substack.com/" target="_blank">My Newsletter</a></li>
+            <li><a href="#contact" target="_blank">Contact</a></li>
+    
+          </ul>
+        </nav>
+
+
+        <div style="font-family: Arial, sans-serif; margin: 20px; padding: 20px; border: 2px solid #4CAF50; border-radius: 10px; background: linear-gradient(145deg, #f3f4f6, #e6e9ec); box-shadow: 4px 4px 8px rgba(0,0,0,0.1);">
+        <h1 style="text-align: center; font-size: 2.5em; color: #4CAF50; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
+            <i style="color: #388E3C; margin-right: 10px;" class="fas fa-award"></i> Certifications
+        </h1>
+        <p style="text-align: center; font-size: 1.2em; color: #555; margin-top: 10px;">
+            Highlighting milestones of professional growth and achievements.
+        </p>
+    </div>
+    
     <div class="container">
         <!-- Certificate 1 -->
         <article>
@@ -205,9 +264,9 @@
                     <span class="cert-title">An Introduction to Programming Through C++</span>
                 </div>
                 <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Abhiram G Ranade</li></ul></span>
+                    <img src="Media/Certificates/iitb.png" alt="IITB" class="org-logo">
+                    <span class="institute">IIT Bombay</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">C++</span>
@@ -229,7 +288,7 @@
             <span class="cert-title">AWS Certified Solutions Architect</span>
         </div>
        <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <span class="instructor-name">Instructor: <ul><li></li></ul></span>
                     <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
                     <span class="institute">deeplearning.ai</span>
                 </div>
@@ -248,20 +307,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/2 Introduction to Operating Systems.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Google Cloud Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Introduction To Operating Systems</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructors: <ul><li>Prof. Chester Rebeiro</li></ul></span>
+                    <img src="Media/Certificates/iitm.png" alt="IITM" class="org-logo">
+                    <span class="institute">IIT Madras</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">GCP</span>
                     <span class="skill-tag">Cloud Infrastructure</span>
                     <span class="skill-tag">DevOps</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS78S1430007709030295" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -271,20 +330,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/3 Data Base Management System.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Data Base Management System</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Partha Pratim Das</li><li> Prof. Samiran Chattopadhyay</li><li> Prof. Kausik Datta</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS91S4364024910022470" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -294,20 +353,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/3 Programming In Java.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Programming in Java</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Debasis Samanta</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS102S6364027210022470" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -317,20 +376,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/4 Programming in Modern C++.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Programming in Modern C++</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Partha Pratim Das</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS103S3364012810022470" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -340,20 +399,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/5 Roadmap for patent creation.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Roadmap for Patent Creation</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Gouri Gargate</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23GE22S4475022603112307" class="cert-link">View Certificate</a>
             </div>
         </article>
          <!-- Certificate 7 -->
@@ -363,20 +422,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/6 Ethical Hacking.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Ethical Hacking</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Indranil Sengupta</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://internalapp.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS44S6378035904272119" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -386,20 +445,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/7 Computer Graphics.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Computer Graphics</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Samit Bhattacharya</li></ul></span>
+                    <img src="Media/Certificates/iitg.png" alt="IIT Guwahati" class="org-logo">
+                    <span class="institute">IIT Guwahati</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL23CS115S4490006510115664" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -409,20 +468,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/8 Corporate Finance.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Corporate Finance</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Abhijeet Chandra</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL23MG92S3490019110115664" class="cert-link">View Certificate</a>
             </div>
         </article>
 
@@ -432,20 +491,23 @@
             <div class="card-content">
                 <img src="Media/Certificates/9 Applied Accelerated Artificial Intelligence.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Applied Artificial Intelligence</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Satyadhyan Chickerur </li>
+                       <li> Prof. Bharatkumar Sharma</li>
+                       <li>  Prof. Adesuyi Tosin</li>
+                       <li> Prof. Satyajit Das</li></ul></span>
+                    <img src="Media/Certificates/iitm.png" alt="IITM" class="org-logo">
+                    <span class="institute">IIT Madras</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS104S63770073720374789" class="cert-link">View Certificate</a>
             </div>
         </article>
          <!-- Certificate 11 -->
@@ -454,20 +516,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/10 Introduction To Internet Of Things.jpg" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Introduction to Internet of Things</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Sudip Misra</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITB" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL24CS35S65770046230718626" class="cert-link">View Certificate</a>
             </div>
         </article>
          <!-- Certificate 12 -->
@@ -476,20 +538,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/11 Intellectual Property Portfolio Management.png" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Intellectual Property Portfolio Management</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Rajat Agrawal</li></ul></span>
+                    <img src="Media/Certificates/iitr.png" alt="IITR" class="org-logo">
+                    <span class="institute">IIR Roorkee</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24GE62S56470002404300750" class="cert-link">View Certificate</a>
             </div>
         </article>
          <!-- Certificate 13 -->
@@ -498,20 +560,20 @@
             <div class="card-content">
                 <img src="Media/Certificates/12 Introduction to Industry 4.0 and Industrial Internet of Things.png" alt="NPTEL">
                 <div class="cert-header">
-                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
                     <span class="cert-title">Introduction to Industrial Internet of Things 4.0</span>
                 </div>
                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: Andrew Ng</span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
+                    <span class="instructor-name">Instructor: <ul><li>Prof. Sudip Misra</li></ul></span>
+                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
+                    <span class="institute">IIT Kharagpur</span>
                 </div>
                 <div class="skills">
                     <span class="skill-tag">Azure</span>
                     <span class="skill-tag">Cloud Development</span>
                     <span class="skill-tag">.NET</span>
                 </div>
-                <a href="#" class="cert-link">View Certificate</a>
+                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS95S36470004704300750" class="cert-link">View Certificate</a>
             </div>
         </article>
 
