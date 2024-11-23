@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: #232323;
+            display: grid;
+            place-items: center;
+            font-family: system-ui, sans-serif;
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap, 32px);
+            padding: 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: center;
+        }
+
+        article {
+            --active: 0;
+            --start: 0;
+            background: #323232;
+            padding: 2rem;
+            border-radius: 16px;
+            width: calc(33.33% - 32px);
+            min-width: 300px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.2s;
+        }
+
+        .glows {
+            pointer-events: none;
+            position: absolute;
+            inset: -20px;
+            opacity: var(--active);
+            z-index: 1;
+        }
+
+        .glows::before,
+        .glows::after {
+            content: "";
+            position: absolute;
+            inset: 20px;
+            border-radius: inherit;
+            background: conic-gradient(
+                from calc(var(--start) * 1deg),
+                #6366f1,
+                #a855f7,
+                #ec4899,
+                transparent calc(var(--spread, 80) * 1deg)
+            );
+            opacity: var(--active);
+            animation: rotate 5s linear infinite;
+            filter: blur(var(--blur, 20px));
+        }
+
+        .glows::after {
+            background: conic-gradient(
+                from calc(var(--start) * 1deg),
+                #14b8a6,
+                #0ea5e9,
+                #6366f1,
+                transparent calc(var(--spread, 80) * 1deg)
+            );
+            opacity: var(--active);
+            animation: rotate 5s linear infinite reverse;
+            filter: blur(var(--blur, 20px));
+        }
+
+        /* Card Content Styles - Making sure content is above the glow */
+        .card-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        article img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .cert-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-header img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            margin: 0;
+        }
+
+        .cert-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .cert-link {
+            color: #3498db;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .cert-link:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            article {
+                width: calc(50% - 32px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            article {
+                width: 100%;
+            }
+        }
+
+        .org-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+}
+.instructor-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.instructor-name {
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+
+.institute {
+    font-size: 0.9rem;
+    color: #a0a0a0;
+    margin-left: auto;
+}
+.cert-logo {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Certifications</h1>
+    <div class="container">
+        <!-- Certificate 1 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/1 An Introduction to Programming Through C++.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img class="cert-logo" src="Media/Certificates/nptel_logo.png" alt="AWS Logo">
+                    <span class="cert-title">An Introduction to Programming Through C++</span>
+                </div>
+                <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">C++</span>
+                    <span class="skill-tag">AWS Services</span>
+                    <span class="skill-tag">Security</span>
+                </div>
+                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS42S4356031702192937" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+<!-- certificate Teemplate -->
+ <!-- Certificate 1
+ <article>
+    <div class="glows"></div>
+    <div class="card-content">
+        <img src="shivduttchoubey.github.io\Pages\Media\Certificates\nptel_logo.png" alt="AWS Certification">
+        <div class="cert-header">
+            <img src="/api/placeholder/32/32" alt="AWS Logo">
+            <span class="cert-title">AWS Certified Solutions Architect</span>
+        </div>
+       <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+            <span class="skill-tag">Cloud Architecture</span>
+            <span class="skill-tag">AWS Services</span>
+            <span class="skill-tag">Security</span>
+        </div>
+        <a href="#" class="cert-link">View Certificate</a>
+    </div>
+</article> -->
+
+        <!-- Certificate 2 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/2 Introduction to Operating Systems.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Google Cloud Logo">
+                    <span class="cert-title">Introduction To Operating Systems</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">GCP</span>
+                    <span class="skill-tag">Cloud Infrastructure</span>
+                    <span class="skill-tag">DevOps</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+        <!-- Certificate 3 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/3 Data Base Management System.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Data Base Management System</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+         <!-- Certificate 4 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/3 Programming In Java.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Programming in Java</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+         <!-- Certificate 5 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/4 Programming in Modern C++.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Programming in Modern C++</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+         <!-- Certificate 6 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/5 Roadmap for patent creation.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Roadmap for Patent Creation</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+         <!-- Certificate 7 -->
+
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/6 Ethical Hacking.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Ethical Hacking</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+         <!-- Certificate 8 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/7 Computer Graphics.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Computer Graphics</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+         <!-- Certificate 9 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/8 Corporate Finance.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Corporate Finance</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+         <!-- Certificate 10 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/9 Applied Accelerated Artificial Intelligence.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Applied Artificial Intelligence</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+         <!-- Certificate 11 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/10 Introduction To Internet Of Things.jpg" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Introduction to Internet of Things</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+         <!-- Certificate 12 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/11 Intellectual Property Portfolio Management.png" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Intellectual Property Portfolio Management</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+         <!-- Certificate 13 -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content">
+                <img src="Media/Certificates/12 Introduction to Industry 4.0 and Industrial Internet of Things.png" alt="NPTEL">
+                <div class="cert-header">
+                    <img src="/api/placeholder/32/32" alt="Microsoft Logo">
+                    <span class="cert-title">Introduction to Industrial Internet of Things 4.0</span>
+                </div>
+               <div class="instructor-info">
+                    <span class="instructor-name">Instructor: Andrew Ng</span>
+                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
+                    <span class="institute">deeplearning.ai</span>
+                </div>
+                <div class="skills">
+                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">Cloud Development</span>
+                    <span class="skill-tag">.NET</span>
+                </div>
+                <a href="#" class="cert-link">View Certificate</a>
+            </div>
+        </article>
+
+        <!-- Coming Soon Card -->
+        <article>
+            <div class="glows"></div>
+            <div class="card-content" style="text-align: center; padding: 2rem;">
+                <h3>More Certifications Coming Soon</h3>
+                <p style="margin-top: 1rem; opacity: 0.7;">Stay tuned for upcoming achievements!</p>
+            </div>
+        </article>
+    </div>
+
+    <script type="module">
+        import { GUI } from 'https://cdn.skypack.dev/dat.gui';
+        
+        const CONTAINER = document.querySelector('.container');
+        const CARDS = document.querySelectorAll('article');
+        const CONFIG = {
+            proximity: 40,
+            spread: 80,
+            blur: 20,
+            gap: 32,
+            vertical: false,
+            opacity: 0,
+        };
+
+        const UPDATE = (event) => {
+            for (const CARD of CARDS) {
+                const CARD_BOUNDS = CARD.getBoundingClientRect();
+                
+                if (
+                    event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
+                    event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
+                    event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
+                    event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+                ) {
+                    CARD.style.setProperty('--active', 1);
+                } else {
+                    CARD.style.setProperty('--active', CONFIG.opacity);
+                }
+
+                const CARD_CENTER = [
+                    CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
+                    CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5
+                ];
+
+                let ANGLE = Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) * 180 / Math.PI;
+                ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
+                CARD.style.setProperty('--start', ANGLE);
+            }
+        };
+
+        const RESTYLE = () => {
+            CONTAINER.style.setProperty('--gap', CONFIG.gap);
+            CONTAINER.style.setProperty('--blur', CONFIG.blur);
+            CONTAINER.style.setProperty('--spread', CONFIG.spread);
+            CONTAINER.style.setProperty('--direction', CONFIG.vertical ? 'column' : 'row');
+        };
+
+        document.body.addEventListener('pointermove', UPDATE);
+
+        const CTRL = new GUI({
+            width: 340,
+        });
+
+       
+    </script>
+</body>
+</html>

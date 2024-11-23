@@ -4,8 +4,314 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future Prospects</title>
+    <style>
+        :root {
+            --glow-hue: 222deg;
+            --shadow-hue: 180deg;
+            --spring-easing: linear(
+                0, 0.002, 0.01 0.9%, 0.038 1.8%, 0.156, 0.312 5.8%, 0.789 11.1%, 1.015 14.2%,
+                1.096, 1.157, 1.199, 1.224 20.3%, 1.231, 1.231, 1.226, 1.214 24.6%,
+                1.176 26.9%, 1.057 32.6%, 1.007 35.5%, 0.984, 0.968, 0.956, 0.949 42%,
+                0.946 44.1%, 0.95 46.5%, 0.998 57.2%, 1.007, 1.011 63.3%, 1.012 68.3%,
+                0.998 84%, 1
+            );
+            --spring-duration: 1.33s;
+            --text-color: #e6e6e6;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Original button animations */
+        @property --shimmer {
+            syntax: "<angle>";
+            inherits: false;
+            initial-value: 33deg;
+        }
+
+        @keyframes shimmer {
+            0% { --shimmer: 0deg; }
+            100% { --shimmer: 360deg; }
+        }
+
+        @keyframes shine {
+            0% { opacity: 0; }
+            15% { opacity: 1; }
+            55% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        @keyframes text {
+            0% { background-position: 100% center; }    
+            100% { background-position: -100% center; }    
+        }
+
+        /* Base styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-image: radial-gradient(
+                circle at 50% 0%,
+                rgb(67, 54, 74) 16.4%,
+                rgb(47, 48, 67) 68.2%,
+                rgb(27, 23, 36) 99.1%
+            );
+            color: var(--text-color);
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header styles */
+        .header {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(120deg, #ffc4ec, #efdbfd, #ffedd6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 1rem auto;
+        }
+
+        /* Grid layout */
+        .prospects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        /* Card styles */
+        .prospect-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .prospect-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .prospect-card h3 {
+            font-size: 1.5rem;
+            margin: 0 0 1rem;
+            background: linear-gradient(120deg, #ffc4ec, #efdbfd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .prospect-card p {
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin: 4rem 0;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin: 2rem 0;
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        /* Button styles (preserved from original) */
+        button {
+            color: var(--bg);
+            font-weight: 600;
+            background-image: linear-gradient(
+                315deg,
+                #ffc4ec -10%,
+                #efdbfd 50%,
+                #ffedd6 110%
+            );
+            padding: .8em 1.4em;
+            position: relative;
+            isolation: isolate;
+            box-shadow: 0 2px 3px 1px hsl(var(--glow-hue) 50% 20% / 50%), 
+                       inset 0 -10px 20px -10px hsla(var(--shadow-hue),10%,90%,95%);
+            border-radius: 0.66em;
+            scale: 1;
+            transition: all var(--spring-duration) var(--spring-easing);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        button:hover:not(:active),
+        button.active {
+            transition-duration: calc(var(--spring-duration)*0.5);
+            scale: 1.2;
+            box-shadow: 0 4px 8px -2px hsl(var(--glow-hue) 50% 20% / 50%), 
+                       inset 0 0 0 transparent;
+        }
+
+        button:active {
+            scale: 1.1;
+            transition-duration: calc(var(--spring-duration)*0.5);
+        }
+
+        .shimmer {
+            position: absolute;
+            inset: -40px;
+            border-radius: inherit;
+            mask-image: conic-gradient(
+                from var(--shimmer, 0deg),
+                transparent 0%,
+                transparent 10%,
+                black 36%,
+                black 45%,
+                transparent 50%,
+                transparent 60%,
+                black 85%,
+                black 95%,
+                transparent 100%
+            );
+            mask-size: cover;
+            mix-blend-mode: plus-lighter;
+            animation: shimmer 1s linear infinite both;
+        }
+
+        .text {
+            color: transparent;
+            background-clip: text;
+            background-color: var(--bg);
+            background-image: linear-gradient(120deg, 
+                transparent, 
+                hsla(var(--glow-hue),100%,80%,0.66) 40%, 
+                hsla(var(--glow-hue),100%,90%,.9) 50%, 
+                transparent 52%);
+            background-repeat: no-repeat;
+            background-size: 300% 300%;
+            background-position: center 200%;
+        }
+
+        button:hover .text,
+        button.active .text {
+            animation: text .66s ease-in 1 both;
+        }
+
+        /* Added styles for buttons container */
+        .buttons-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .prospects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <main>
+        <section class="header">
+            <h1>Future Prospects</h1>
+            <p>Exploring the intersection of development, research, and innovation</p>
+        </section>
+
+        <section class="buttons-container">
+            <button>
+                <span class="text">View CV</span>
+                <span class="shimmer"></span>
+            </button>
+            <button>
+                <span class="text">Research Papers</span>
+                <span class="shimmer"></span>
+            </button>
+        </section>
+
+        <section class="prospects-grid">
+            <div class="prospect-card">
+                <h3>Research Goals</h3>
+                <p>Focusing on advanced machine learning algorithms and their applications in real-world scenarios. Pursuing breakthrough innovations in natural language processing and computer vision.</p>
+            </div>
+
+            <div class="prospect-card">
+                <h3>Development Path</h3>
+                <p>Expanding expertise in full-stack development with emphasis on scalable architecture and cloud-native solutions. Mastering emerging technologies and frameworks.</p>
+            </div>
+
+            <div class="prospect-card">
+                <h3>Collaborations</h3>
+                <p>Seeking partnerships with leading research institutions and tech companies. Open to collaborative projects that push the boundaries of current technology.</p>
+            </div>
+
+            <div class="prospect-card">
+                <h3>Innovation Focus</h3>
+                <p>Developing novel solutions at the intersection of AI and sustainable technology. Creating impact through practical applications of cutting-edge research.</p>
+            </div>
+        </section>
+
+        <section class="timeline">
+            <div class="timeline-item">
+                <h3>2024-2025</h3>
+                <p>Publication of research papers in top-tier conferences and completion of advanced certification programs.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2025-2026</h3>
+                <p>Launch of innovative projects combining research findings with practical applications.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>2026-2027</h3>
+                <p>Expansion into international collaborations and establishment of research partnerships.</p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
