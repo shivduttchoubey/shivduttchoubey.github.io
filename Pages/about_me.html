@@ -3,12 +3,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-  <a> </a><link rel="icon" href="Media\favicon.ico">
+   <a> </a><link rel="icon" href="Media\favicon.ico">
 
 
   <title>About Me</title>
   <style>
+ /* Style for everthing except navbar */
+ .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: left;
+            color: #333;
+            line-height: 1.6;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 2rem;
+        }
+        .about-content h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .skills-section {
+            background-color: #f4f4f4;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+            list-style-type: none;
+        }
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .profile-image {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
 
 /* Navbar start */
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
@@ -100,7 +152,46 @@
       </ul>
     </nav>
     <hr>
-
 </header>
+
+<div class="about-container">
+  <div class="profile-section">
+      <img src="Media/profile-photo.jpg" alt="Shiv Dutt Choubey" class="profile-image">
+      <div class="about-content">
+          <h2>About Me</h2>
+          <p>Hello! I'm Shiv Dutt Choubey, a passionate technology enthusiast with a keen interest in innovative solutions and cutting-edge technologies. My journey in the tech world is driven by curiosity, creativity, and a constant desire to learn and grow.</p>
+          
+          <p>As a dedicated professional, I combine technical expertise with problem-solving skills to create meaningful and impactful solutions. My background encompasses a wide range of technological domains, allowing me to approach challenges with a holistic and innovative mindset.</p>
+      </div>
+  </div>
+
+  <div class="skills-section">
+      <h2>Professional Skills</h2>
+      <ul class="skills-grid">
+          <li>Python Programming</li>
+          <li>Machine Learning</li>
+          <li>Data Analysis</li>
+          <li>Web Development</li>
+          <li>Cloud Computing</li>
+          <li>AI/ML Algorithms</li>
+          <li>Deep Learning</li>
+          <li>Natural Language Processing</li>
+          <li>Data Visualization</li>
+      </ul>
+  </div>
+
+  <div class="education-section">
+      <h2>Education</h2>
+      <p>Currently pursuing my academic journey with a focus on technology and innovation. My educational background provides a strong foundation in technical skills and computational thinking.</p>
+  </div>
+
+  <div class="interests-section">
+      <h2>Interests & Passions</h2>
+      <p>Beyond technology, I'm passionate about continuous learning, exploring emerging tech trends, and finding innovative solutions to complex problems. I believe in the power of technology to create positive change and improve lives.</p>
+  </div>
+</div>
+
+
+
 </body>
 </html>
