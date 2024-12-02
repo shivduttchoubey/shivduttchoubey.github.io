@@ -253,9 +253,10 @@
 <!-- Script for Resume Password -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
-        // Configuration (Change these values)
-        const CORRECT_PASSWORD = 'Alpha@345gd'; // Set your desired password
-        const PDF_URL = 'https://github.com/shivduttchoubey/shivduttchoubey.github.io/blob/13c7409037195f4b75da4e43b750df5de3e39e6b/Pages/Media/Resume_Shiv_Dutt_Choubey.pdf'; // Path to your PDF
+          // Configuration (Change these values)
+          const CORRECT_PASSWORD = 'ShivDutt2024'; // Set your desired password
+        const PDF_URL = 'https://raw.githubusercontent.com/shivduttchoubey/shivduttchoubey.github.io/main/Media/ShivDuttChoubey_Resume.pdf'; 
+        // Replace with the raw GitHub URL to your PDF
 
         // DOM Elements
         const passwordContainer = document.getElementById('password-container');
@@ -275,7 +276,7 @@
                 pdfContainer.style.display = 'block';
                 
                 // Load PDF
-                pdfViewer.src = PDF_PATH;
+                pdfViewer.src = `https://docs.google.com/viewer?url=${encodeURIComponent(PDF_URL)}&embedded=true`;
                 
                 // Clear any previous error messages
                 errorMessage.textContent = '';
