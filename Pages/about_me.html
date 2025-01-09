@@ -13,7 +13,13 @@
             box-sizing: border-box;
         }
 
+        hr
+        {
+          background-color: #ccc;
+        }
+
         body {
+          background: #050404;
             font-family: Arial, sans-serif;
             line-height: 1.6;
             padding: 15px;
@@ -32,27 +38,36 @@
             list-style-type: none;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            /* gap: 20px; */
             flex-wrap: wrap;
-            padding: 10px;
+            /* padding: 10px; */
+
         }
 
         #navbar a {
             text-decoration: none;
-            color: #333;
+            color: #f6f0f0;
             padding: 8px 12px;
             white-space: nowrap;
-            font-size: clamp(14px, 2vw, 16px);
+            font-size: clamp(20px, 2vw, 16px);
+            border-left: 6px solid green;
+            border-right: 6px solid green;
+            height: flex-grow;
+            
+            
         }
 
         #navbar a:hover {
             color: #0066cc;
             background: #f0f0f0;
             border-radius: 4px;
+            line-break: auto;
+
         }
 
         /* Container styles */
         .about-container {
+            /* background-color: #ccc; */
             max-width: 1200px;
             margin: 0 auto;
             padding: clamp(10px, 3vw, 20px);
@@ -75,17 +90,19 @@
         }
 
         .about-content {
-            flex: 1;
+           flex: 1;
             min-width: min(100%, 300px);
         }
 
         /* Text sizing */
         h2 {
+            color: #f6f0f0;
             font-size: clamp(20px, 4vw, 28px);
             margin-bottom: 15px;
         }
 
         p {
+          color: #f6f0f0;
             font-size: clamp(14px, 2vw, 16px);
             margin-bottom: 15px;
         }
@@ -107,6 +124,12 @@
             font-size: clamp(14px, 2vw, 16px);
         }
 
+        .skills-grid li:hover {
+            background: #3498db; /* Change background on hover */
+            transform: scale(1.1); /* Scale the element */
+            color: white; /* Change text color on hover */
+}
+        
         /* Section spacing */
         .education-section,
         .interests-section,
@@ -266,12 +289,15 @@
             <h2>Education</h2>
             <p>Currently pursuing my academic journey with a focus on technology and innovation. My educational background provides a strong foundation in technical skills and computational thinking.</p>
         </div>
+        <hr>
 
         <div class="interests-section">
             <h2>Interests & Passions</h2>
             <p>Beyond technology, I'm passionate about continuous learning, exploring emerging tech trends, and finding innovative solutions to complex problems. I believe in the power of technology to create positive change and improve lives.</p>
         </div>
+        <hr>
     </div>
+    
 
     <div id="password-container">
         <h2>Resume Access</h2>
