@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certifications</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -14,10 +15,9 @@
         body {
             min-height: 100vh;
             background: #232323;
-            display: grid;
-            place-items: center;
             font-family: system-ui, sans-serif;
             color: #fff;
+            overflow-x: hidden;
         }
 
         .container {
@@ -40,7 +40,11 @@
             min-width: 300px;
             position: relative;
             overflow: hidden;
-            transition: background 0.2s;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
         }
 
         .glows {
@@ -82,7 +86,6 @@
             filter: blur(var(--blur, 20px));
         }
 
-        /* Card Content Styles - Making sure content is above the glow */
         .card-content {
             position: relative;
             z-index: 2;
@@ -104,8 +107,8 @@
         }
 
         .cert-header img {
-            width: 32px;
-            height: 32px;
+            width: 48px;
+            height: 48px;
             object-fit: contain;
             margin: 0;
         }
@@ -114,6 +117,42 @@
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+
+        .instructor-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            flex-wrap: wrap;
+        }
+
+        .instructor-name {
+            font-size: 0.9rem;
+            color: #e0e0e0;
+            flex: 1;
+        }
+
+        .instructor-name ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        .institute {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+
+        .org-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
         }
 
         .skills {
@@ -133,12 +172,78 @@
         .cert-link {
             color: #3498db;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
             margin-top: 1rem;
+            transition: color 0.2s;
         }
 
         .cert-link:hover {
-            text-decoration: underline;
+            color: #2980b9;
+        }
+
+        .cert-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        #navbar {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: flex-end;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #navbar ul a {
+            display: inline-block;
+            padding: 1.2rem 2rem;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+            line-height: 25px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        #navbar ul a:hover {
+            background-color: #2c7873;
+            color: white;
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(145deg, #2c7873, #1e5350);
+            margin: 2rem auto;
+            border-radius: 16px;
+            max-width: 800px;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-title p {
+            font-size: 1.2rem;
+            color: #e0e0e0;
         }
 
         @keyframes rotate {
@@ -151,495 +256,335 @@
             article {
                 width: calc(50% - 32px);
             }
+            
+            #navbar {
+                padding: 0 1rem;
+            }
+            
+            #navbar ul a {
+                padding: 1rem;
+                font-size: 1rem;
+            }
         }
 
         @media (max-width: 480px) {
             article {
                 width: 100%;
             }
+            
+            .container {
+                padding: 16px;
+            }
+            
+            #navbar ul {
+                justify-content: center;
+            }
         }
 
-        .org-logo {
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-}
-.instructor-info {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin: 0.75rem 0;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
-}
-
-.instructor-name {
-    font-size: 0.9rem;
-    color: #e0e0e0;
-}
-
-.institute {
-    font-size: 0.9rem;
-    color: #a0a0a0;
-    margin-left: auto;
-}
-.cert-logo {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            flex-shrink: 0;
+        .contact-form {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
         }
 
-
-
-
- #navbar {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0rem 3rem;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  width: 100vw;
-}
-
-#navbar ul {
-  list-style: none;
-  display: flex;
-}
-
-#navbar ul a {
-  font-family: cursive;
-  display: inline-block;
-  padding: 1.2rem 2rem;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-#navbar ul a:hover {
-    background-color: hsl(188, 63%, 37%);
-  color: black;
-}
+        .contact-form iframe {
+            width: 100%;
+            min-height: 758px;
+            border: none;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
     <header id="about">
         <nav id="navbar">
-          <ul>
-            <li><a href="about_me.html" target="blank">About</a></li>
-            <li><a href="projects_and_academic_work.html" target="blank">Projects</a></li>
-            <li><a href="certifications.html" target="blank">Certifications</a></li>
-            <li><a href="achievement_participation.html" target="blank">Accomplishments</a></li>
-            <li><a href="future_prospects.html" target="blank">Future Prospects</a></li>
-            <li><a href="https://shivduttchoubey.substack.com/" target="blank">My Newsletter</a></li>
-            <li><a href="#contact" target="blank">Contact</a></li>
-    
-          </ul>
+            <ul>
+                <li><a href="about_me.html">About</a></li>
+                <li><a href="projects_and_academic_work.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="achievement_participation.html">Accomplishments</a></li>
+                <li><a href="future_prospects.html">Future Prospects</a></li>
+                <li><a href="https://shivduttchoubey.substack.com/">My Newsletter</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-        <div style="font-family: Arial, sans-serif; margin: 20px; padding: 20px; border: 2px solid #4CAF50; border-radius: 10px; background: linear-gradient(145deg, #f3f4f6, #e6e9ec); box-shadow: 4px 4px 8px rgba(0,0,0,0.1);">
-        <h1 style="text-align: center; font-size: 2.5em; color: #4CAF50; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
-            <i style="color: #388E3C; margin-right: 10px;" class="fas fa-award"></i> Certifications
-        </h1>
-        <p style="text-align: center; font-size: 1.2em; color: #555; margin-top: 10px;">
-            Highlighting milestones of professional growth and achievements.
-        </p>
+    <div class="page-title">
+        <h1>Certifications</h1>
+        <p>Highlighting milestones of professional growth and achievements.</p>
     </div>
-    
+
     <div class="container">
-        <!-- Certificate 1 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/1 An Introduction to Programming Through C++.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img class="cert-logo" src="Media/Certificates/nptel_logo.png" alt="AWS Logo">
-                    <span class="cert-title">An Introduction to Programming Through C++</span>
-                </div>
-                <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Abhiram G Ranade</li></ul></span>
-                    <img src="Media/Certificates/iitb.png" alt="IITB" class="org-logo">
-                    <span class="institute">IIT Bombay</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">C++</span>
-                    <span class="skill-tag">AWS Services</span>
-                    <span class="skill-tag">Security</span>
-                </div>
-                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS42S4356031702192937" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-<!-- certificate Teemplate -->
- <!-- Certificate 1
- <article>
-    <div class="glows"></div>
-    <div class="card-content">
-        <img src="shivduttchoubey.github.io\Pages\Media\Certificates\nptel_logo.png" alt="AWS Certification">
-        <div class="cert-header">
-            <img src="/api/placeholder/32/32" alt="AWS Logo">
-            <span class="cert-title">AWS Certified Solutions Architect</span>
-        </div>
-       <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li></li></ul></span>
-                    <img src="/api/placeholder/32/32" alt="Coursera Logo" class="org-logo">
-                    <span class="institute">deeplearning.ai</span>
-                </div>
-                <div class="skills">
-            <span class="skill-tag">Cloud Architecture</span>
-            <span class="skill-tag">AWS Services</span>
-            <span class="skill-tag">Security</span>
-        </div>
-        <a href="#" class="cert-link">View Certificate</a>
+        <!-- Certificate cards will be dynamically inserted here -->
     </div>
-</article> -->
 
-        <!-- Certificate 2 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/2 Introduction to Operating Systems.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Introduction To Operating Systems</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructors: <ul><li>Prof. Chester Rebeiro</li></ul></span>
-                    <img src="Media/Certificates/iitm.png" alt="IITM" class="org-logo">
-                    <span class="institute">IIT Madras</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">GCP</span>
-                    <span class="skill-tag">Cloud Infrastructure</span>
-                    <span class="skill-tag">DevOps</span>
-                </div>
-                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS78S1430007709030295" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-        <!-- Certificate 3 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/3 Data Base Management System.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Data Base Management System</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Partha Pratim Das</li><li> Prof. Samiran Chattopadhyay</li><li> Prof. Kausik Datta</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS91S4364024910022470" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-         <!-- Certificate 4 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/3 Programming In Java.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Programming in Java</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Debasis Samanta</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS102S6364027210022470" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-         <!-- Certificate 5 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/4 Programming in Modern C++.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Programming in Modern C++</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Partha Pratim Das</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL22CS103S3364012810022470" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-         <!-- Certificate 6 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/5 Roadmap for patent creation.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Roadmap for Patent Creation</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Gouri Gargate</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23GE22S4475022603112307" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-         <!-- Certificate 7 -->
-
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/6 Ethical Hacking.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Ethical Hacking</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Indranil Sengupta</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://internalapp.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS44S6378035904272119" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-         <!-- Certificate 8 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/7 Computer Graphics.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Computer Graphics</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Samit Bhattacharya</li></ul></span>
-                    <img src="Media/Certificates/iitg.png" alt="IIT Guwahati" class="org-logo">
-                    <span class="institute">IIT Guwahati</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL23CS115S4490006510115664" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-         <!-- Certificate 9 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/8 Corporate Finance.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Corporate Finance</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Abhijeet Chandra</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL23MG92S3490019110115664" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-         <!-- Certificate 10 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/9 Applied Accelerated Artificial Intelligence.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Applied Artificial Intelligence</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Satyadhyan Chickerur </li>
-                       <li> Prof. Bharatkumar Sharma</li>
-                       <li>  Prof. Adesuyi Tosin</li>
-                       <li> Prof. Satyajit Das</li></ul></span>
-                    <img src="Media/Certificates/iitm.png" alt="IITM" class="org-logo">
-                    <span class="institute">IIT Madras</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS104S63770073720374789" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-         <!-- Certificate 11 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/10 Introduction To Internet Of Things.jpg" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Introduction to Internet of Things</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Sudip Misra</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITB" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://nptel.ac.in/noc/E_Certificate/NPTEL24CS35S65770046230718626" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-         <!-- Certificate 12 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/11 Intellectual Property Portfolio Management.png" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Intellectual Property Portfolio Management</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Rajat Agrawal</li></ul></span>
-                    <img src="Media/Certificates/iitr.png" alt="IITR" class="org-logo">
-                    <span class="institute">IIR Roorkee</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24GE62S56470002404300750" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-         <!-- Certificate 13 -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content">
-                <img src="Media/Certificates/12 Introduction to Industry 4.0 and Industrial Internet of Things.png" alt="NPTEL">
-                <div class="cert-header">
-                    <img src="Media/Certificates/nptel_logo.png" alt="NPTEL Logo">
-                    <span class="cert-title">Introduction to Industrial Internet of Things 4.0</span>
-                </div>
-               <div class="instructor-info">
-                    <span class="instructor-name">Instructor: <ul><li>Prof. Sudip Misra</li></ul></span>
-                    <img src="Media/Certificates/iitkgp.png" alt="IITKGP" class="org-logo">
-                    <span class="institute">IIT Kharagpur</span>
-                </div>
-                <div class="skills">
-                    <span class="skill-tag">Azure</span>
-                    <span class="skill-tag">Cloud Development</span>
-                    <span class="skill-tag">.NET</span>
-                </div>
-                <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS95S36470004704300750" class="cert-link">View Certificate</a>
-            </div>
-        </article>
-
-        <!-- Coming Soon Card -->
-        <article>
-            <div class="glows"></div>
-            <div class="card-content" style="text-align: center; padding: 2rem;">
-                <h3>More Certifications Coming Soon</h3>
-                <p style="margin-top: 1rem; opacity: 0.7;">Stay tuned for upcoming achievements!</p>
-            </div>
-        </article>
+    <div class="contact-form">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrqB4kosfVgKycoU1eoAXE-DakOzxaKfjcw2yrXBgQH0U51A/viewform?embedded=true">
+            Loading...
+        </iframe>
     </div>
-<footer>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrqB4kosfVgKycoU1eoAXE-DakOzxaKfjcw2yrXBgQH0U51A/viewform?embedded=true" width="640" height="758" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</footer>
- 
-</body>
-<script type="module">
-    import { GUI } from 'https://cdn.skypack.dev/dat.gui';
-    
-    const CONTAINER = document.querySelector('.container');
-    const CARDS = document.querySelectorAll('article');
-    const CONFIG = {
-        proximity: 40,
-        spread: 80,
-        blur: 20,
-        gap: 32,
-        vertical: false,
-        opacity: 0,
-    };
 
-    const UPDATE = (event) => {
-        for (const CARD of CARDS) {
-            const CARD_BOUNDS = CARD.getBoundingClientRect();
-            
-            if (
-                event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
-                event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
-                event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
-                event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
-            ) {
-                CARD.style.setProperty('--active', 1);
-            } else {
-                CARD.style.setProperty('--active', CONFIG.opacity);
+    <script>
+        const certifications = [
+            {
+                title: "An Introduction to Programming Through C++",
+                image: "Media/Certificates/1 An Introduction to Programming Through C++.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Abhiram G Ranade"],
+                institute: "IIT Bombay",
+                instituteLogo: "Media/Certificates/iitb.png",
+                skills: ["C++", "Programming", "Data Structures"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS42S4356031702192937"
+            },
+
+            {
+                title: "Introduction To Operating Systems",
+                image: "Media/Certificates/2 Introduction to Operating Systems.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Chester Rebeiro"],
+                institute: "IIT Madras",
+                instituteLogo: "Media/Certificates/iitm.png",
+                skills: ["GCP", "Cloud Infrastructure", "DevOps"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS78S1430007709030295"
+            },
+
+
+                {
+                    title: "Data Base Management System",
+                    image: "Media/Certificates/3 Data Base Management System.jpg",
+                    orgLogo: "Media/Certificates/nptel_logo.png",
+                    instructors: [
+                        "Prof. Partha Pratim Das", 
+                        "Prof. Samiran Chattopadhyay", 
+                        "Prof. Kausik Datta"
+                    ],
+                    institute: "IIT Kharagpur",
+                    instituteLogo: "Media/Certificates/iitkgp.png",
+                    skills: ["Azure", "Cloud Development", ".NET"],
+                    certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS91S4364024910022470"
+                },
+,
+
+            {                
+                title: "Programming in Java",
+                image: "Media/Certificates/3 Programming In Java.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Debasis Samanta"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["Azure", "Cloud Development", ".NET"],
+                certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS102S6364027210022470"
+            },
+
+            {
+            title: "Programming in Modern C++",
+            image: "Media/Certificates/4 Programming in Modern C++.jpg",
+            orgLogo: "Media/Certificates/nptel_logo.png",
+            instructors: ["Prof. Partha Pratim Das"],
+            institute: "IIT Kharagpur",
+            instituteLogo: "Media/Certificates/iitkgp.png",
+            skills: ["Azure", "Cloud Development", ".NET"],
+            certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS103S3364012810022470"
+            },
+, 
+
+                {
+                    title: "Roadmap for Patent Creation",
+                    image: "Media/Certificates/5 Roadmap for patent creation.jpg",
+                    orgLogo: "Media/Certificates/nptel_logo.png",
+                    instructors: ["Prof. Gouri Gargate"],
+                    institute: "IIT Kharagpur",
+                    instituteLogo: "Media/Certificates/iitkgp.png",
+                    skills: ["Azure", "Cloud Development", ".NET"],
+                    certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23GE22S4475022603112307"
+                },
+
+                {
+                title: "Ethical Hacking",
+                image: "Media/Certificates/6 Ethical Hacking.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Indranil Sengupta"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["Azure", "Cloud Development", ".NET"],
+                certificateLink: "https://internalapp.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS44S6378035904272119"
+            },
+,
+
+            {
+                title: "Computer Graphics",
+                image: "Media/Certificates/7 Computer Graphics.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Samit Bhattacharya"],
+                institute: "IIT Guwahati",
+                instituteLogo: "Media/Certificates/iitg.png",
+                skills: ["Azure", "Cloud Development", ".NET"],
+                certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL23CS115S4490006510115664"
+            },
+
+            {
+                title: "Corporate Finance",
+                image: "Media/Certificates/8 Corporate Finance.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Abhijeet Chandra"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["Azure", "Cloud Development", ".NET"],
+                certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL23MG92S3490019110115664"
+            },
+
+            {
+            title: "Applied Artificial Intelligence",
+            image: "Media/Certificates/9 Applied Accelerated Artificial Intelligence.jpg",
+            orgLogo: "Media/Certificates/nptel_logo.png",
+            instructors: [
+                "Prof. Satyadhyan Chickerur", 
+                "Prof. Bharatkumar Sharma", 
+                "Prof. Adesuyi Tosin", 
+                "Prof. Satyajit Das"
+            ],
+            institute: "IIT Madras",
+            instituteLogo: "Media/Certificates/iitm.png",
+            skills: ["Azure", "Cloud Development", ".NET"],
+            certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS104S63770073720374789"
+        },
+
+
+        {
+            title: "Introduction to Internet of Things",
+            image: "Media/Certificates/10 Introduction To Internet Of Things.jpg",
+            orgLogo: "Media/Certificates/nptel_logo.png",
+            instructors: ["Prof. Sudip Misra"],
+            institute: "IIT Kharagpur",
+            instituteLogo: "Media/Certificates/iitkgp.png",
+            skills: ["Azure", "Cloud Development", ".NET"],
+            certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL24CS35S65770046230718626"
+        },
+
+        {
+            title: "Intellectual Property Portfolio Management",
+            image: "Media/Certificates/11 Intellectual Property Portfolio Management.png",
+            orgLogo: "Media/Certificates/nptel_logo.png",
+            instructors: ["Prof. Rajat Agrawal"],
+            institute: "IIT Roorkee",
+            instituteLogo: "Media/Certificates/iitr.png",
+            skills: ["Azure", "Cloud Development", ".NET"],
+            certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24GE62S56470002404300750"
+        },
+
+        {
+            title: "Introduction to Industrial Internet of Things 4.0",
+            image: "Media/Certificates/12 Introduction to Industry 4.0 and Industrial Internet of Things.png",
+            orgLogo: "Media/Certificates/nptel_logo.png",
+            instructors: ["Prof. Sudip Misra"],
+            institute: "IIT Kharagpur",
+            instituteLogo: "Media/Certificates/iitkgp.png",
+            skills: ["Azure", "Cloud Development", ".NET"],
+            certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS95S36470004704300750"
+        },
+
+
+
+
+
+
+            // Add all other certificates following the same structure
+        ];
+
+        const createCertificationCard = (cert) => {
+            return `
+                <article>
+                    <div class="glows"></div>
+                    <div class="card-content">
+                        <img src="${cert.image}" alt="${cert.title}">
+                        <div class="cert-header">
+                            <img src="${cert.orgLogo}" alt="NPTEL Logo">
+                            <span class="cert-title">${cert.title}</span>
+                        </div>
+                        <div class="instructor-info">
+                            <div class="instructor-name">
+                                Instructor${cert.instructors.length > 1 ? 's' : ''}:
+                                <ul>
+                                    ${cert.instructors.map(instructor => `<li>${instructor}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="institute">
+                                <img src="${cert.instituteLogo}" alt="${cert.institute}" class="org-logo">
+                                <span>${cert.institute}</span>
+                            </div>
+                        </div>
+                        <div class="skills">
+                            ${cert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </div>
+                        <a href="${cert.certificateLink}" class="cert-link" target="blank">
+                            View Certificate
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            `;
+        };
+
+        const container = document.querySelector('.container');
+        certifications.forEach(cert => {
+            container.innerHTML += createCertificationCard(cert);
+        });
+
+        // Add "Coming Soon" card
+        container.innerHTML += `
+            <article>
+                <div class="glows"></div>
+                <div class="card-content" style="text-align: center; padding: 2rem;">
+                    <h3 class="cert-title">More Certifications Coming Soon</h3>
+                    <p style="margin-top: 1rem; opacity: 0.7;">Stay tuned for upcoming achievements!</p>
+                </div>
+            </article>
+        `;
+
+        // Glow effect
+        const CONFIG = {
+            proximity: 40,
+            spread: 80,
+            blur: 20,
+            gap: 32,
+            vertical: false,
+            opacity: 0,
+        };
+
+        const UPDATE = (event) => {
+            const CARDS = document.querySelectorAll('article');
+            for (const CARD of CARDS) {
+                const CARD_BOUNDS = CARD.getBoundingClientRect();
+                
+                if (
+                    event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
+                    event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
+                    event?.y > CARD_BOUNDS.top - CONFIG.proximity &&
+                    event?.y < CARD_BOUNDS.top + CARD_BOUNDS.height + CONFIG.proximity
+                ) {
+                    CARD.style.setProperty('--active', 1);
+                } else {
+                    CARD.style.setProperty('--active', CONFIG.opacity);
+                }
+
+                const CARD_CENTER = [
+                    CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
+                    CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5
+                ];
+
+                let ANGLE = Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) * 180 / Math.PI;
+                ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
+                CARD.style.setProperty('--start', ANGLE);
             }
+        };
 
-            const CARD_CENTER = [
-                CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
-                CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5
-            ];
-
-            let ANGLE = Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) * 180 / Math.PI;
-            ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
-            CARD.style.setProperty('--start', ANGLE);
-        }
-    };
-
-    const RESTYLE = () => {
-        CONTAINER.style.setProperty('--gap', CONFIG.gap);
-        CONTAINER.style.setProperty('--blur', CONFIG.blur);
-        CONTAINER.style.setProperty('--spread', CONFIG.spread);
-        CONTAINER.style.setProperty('--direction', CONFIG.vertical ? 'column' : 'row');
-    };
-
-    document.body.addEventListener('pointermove', UPDATE);
-
-   
-</script>
+        document.body.addEventListener('pointermove', UPDATE);
+    </script>
+</body>
 </html>
