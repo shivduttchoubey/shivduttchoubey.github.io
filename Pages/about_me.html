@@ -1,309 +1,326 @@
-<html>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
-   <a> </a><link rel="icon" href="Media\favicon.ico">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Media/favicon.ico">
+    <title>About Me</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-
-  <title>About Me</title>
-  <style>
- /* Style for everthing except navbar */
- .about-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            text-align: left;
-            color: #333;
+        body {
+            font-family: Arial, sans-serif;
             line-height: 1.6;
-        }
-        .profile-section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 2rem;
-        }
-        .about-content h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        .skills-section {
-            background-color: #f4f4f4;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.5rem;
-            list-style-type: none;
-        }
-        @media (max-width: 768px) {
-            .profile-section {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile-image {
-                margin-right: 0;
-                margin-bottom: 1rem;
-            }
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+            padding: 15px;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
-
-/* Navbar start */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
-
-
-/* VARIABLES */
-:root {
-  --primary-color: #000000;
-  --secondary-color:#343434;
-}
-
-/* CSS RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-/* UTILITY CLASSES */
-
-.btn {
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 4rem;
-  text-align: center;
-  display: inline-block;
-  padding: .6rem 1.5rem;
-  border-radius: 10px;
-  background-color: var(--primary-color);
-  transition: all .5s ease-in-out;
-}
-
-.btn:hover {
-  background-color: rgb(230, 14, 14);
-}
-
-#navbar {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0rem 3rem;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  width: 100vw;
-}
-
-#navbar ul {
-  list-style: none;
-  display: flex;
-}
-
-#navbar ul a {
-  font-family: cursive;
-  display: inline-block;
-  padding: 1.2rem 2rem;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 4px;
-}
-
-#navbar ul a:hover {
-    background-color: hsl(188, 63%, 37%);
-  color: black;
-}
-/* Navbar end */
-
-
-/* Resume Style Start */
-#password-container {
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        #password-input {
+        /* Navigation styles */
+        #navbar {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            overflow-x: auto;
         }
-        #submit-btn {
-            background-color: #391a3a;
+
+        #navbar ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        #navbar a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            white-space: nowrap;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        #navbar a:hover {
+            color: #0066cc;
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        /* Container styles */
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: clamp(10px, 3vw, 20px);
+        }
+
+        /* Profile section styles */
+        .profile-section {
+            display: flex;
+            gap: clamp(20px, 4vw, 30px);
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .profile-image {
+            width: clamp(200px, 50vw, 400px);
+            height: clamp(200px, 50vw, 400px);
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: min(100%, 300px);
+        }
+
+        /* Text sizing */
+        h2 {
+            font-size: clamp(20px, 4vw, 28px);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: clamp(14px, 2vw, 16px);
+            margin-bottom: 15px;
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 20px 0;
+        }
+
+        .skills-grid li {
+            background: #f5f5f5;
+            padding: clamp(8px, 2vw, 15px);
+            border-radius: 5px;
+            text-align: center;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        /* Section spacing */
+        .education-section,
+        .interests-section,
+        .skills-section {
+            margin-bottom: clamp(30px, 5vw, 50px);
+        }
+
+        /* Password container */
+        #password-container {
+            max-width: min(400px, 90%);
+            margin: 40px auto;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #password-input {
+            padding: 12px;
+            margin: 10px;
+            width: min(200px, 80%);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        #submit-btn,
+        #close-btn {
+            padding: 12px 24px;
+            background: #0066cc;
             color: white;
             border: none;
-            padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            font-size: 16px;
+            margin: 10px;
+            transition: background 0.3s;
         }
-        #submit-btn:hover {
-            background-color: #5a2c5a;
+
+        #submit-btn:hover,
+        #close-btn:hover {
+            background: #0052a3;
         }
+
         #error-message {
             color: red;
             margin-top: 10px;
+            font-size: 14px;
         }
+
+        /* PDF container */
         #pdf-container {
-            display: none;
-            margin-top: 20px;
+            max-width: min(800px, 95%);
+            margin: 20px auto;
+            text-align: center;
         }
-/* Resume Style End */
 
+        #pdf-viewer {
+            width: 100%;
+            height: min(600px, 80vh);
+            border: none;
+        }
 
+        .hidden {
+            display: none;
+        }
 
-  </style>
+        /* Media Queries */
+        @media (max-width: 768px) {
+            #navbar ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .about-content {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #password-input,
+            #submit-btn,
+            #close-btn {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            #navbar,
+            #password-container,
+            #pdf-container {
+                display: none;
+            }
+
+            body {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header id="about">
-    <nav id="navbar">
-      <ul>
-        <li><a href="about_me.html" target="blank">About</a></li>
-        <li><a href="projects_and_academic_work.html" target="blank">Projects</a></li>
-        <li><a href="certifications.html" target="blank">Certifications</a></li>
-        <li><a href="achievement_participation.html" target="blank">Accomplishments</a></li>
-        <li><a href="future_prospects.html" target="blank">Future Prospects</a></li>
-        <li><a href="https://shivduttchoubey.substack.com/" target="blank">My Newsletter</a></li>
-        <li><a href="#contact" target="blank">Contact</a></li>
+    <header id="about">
+        <nav id="navbar">
+            <ul>
+                <li><a href="about_me.html">About</a></li>
+                <li><a href="projects_and_academic_work.html">Projects</a></li>
+                <li><a href="certifications.html">Certifications</a></li>
+                <li><a href="achievement_participation.html">Accomplishments</a></li>
+                <li><a href="future_prospects.html">Future Prospects</a></li>
+                <li><a href="https://shivduttchoubey.substack.com/">My Newsletter</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header>
 
-      </ul>
-    </nav>
-    <hr>
-</header>
+    <div class="about-container">
+        <div class="profile-section">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQGqQ-Z8FiDbTA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682578118477?e=1738800000&v=beta&t=gRa6qOlMonpTiDjzoSR2xk4Tg0otHbvpcY-kpRLfDOQ" alt="Shiv Dutt Choubey" class="profile-image">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>Hello! I'm Shiv Dutt Choubey, a passionate technology enthusiast with a keen interest in innovative solutions and cutting-edge technologies. My journey in the tech world is driven by curiosity, creativity, and a constant desire to learn and grow.</p>
+                <p>As a dedicated professional, I combine technical expertise with problem-solving skills to create meaningful and impactful solutions. My background encompasses a wide range of technological domains, allowing me to approach challenges with a holistic and innovative mindset.</p>
+            </div>
+        </div>
 
-<div class="about-container">
-  <div class="profile-section">
-      <img src="https://media.licdn.com/dms/image/v2/D4D03AQGqQ-Z8FiDbTA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1682578118477?e=1738800000&v=beta&t=gRa6qOlMonpTiDjzoSR2xk4Tg0otHbvpcY-kpRLfDOQ" alt="Shiv Dutt Choubey" class="profile-image">
-      <div class="about-content">
-          <h2>About Me</h2>
-          <p>Hello! I'm Shiv Dutt Choubey, a passionate technology enthusiast with a keen interest in innovative solutions and cutting-edge technologies. My journey in the tech world is driven by curiosity, creativity, and a constant desire to learn and grow.</p>
-          
-          <p>As a dedicated professional, I combine technical expertise with problem-solving skills to create meaningful and impactful solutions. My background encompasses a wide range of technological domains, allowing me to approach challenges with a holistic and innovative mindset.</p>
-      </div>
-  </div>
+        <div class="skills-section">
+            <h2>Professional Skills</h2>
+            <ul class="skills-grid">
+                <li>Machine Learning</li>
+                <li>Full Stack Web Development</li>
+                <li>Android App Development</li>
+                <li>Cloud Computing</li>
+                <li>Natural Language Processing</li>
+                <li>Data Visualization</li>
+                <li>Cyber Security</li>
+                <li>Penetration Testing</li>
+            </ul>
+        </div>
 
-  <div class="skills-section">
-      <h2>Professional Skills</h2>
-      <ul class="skills-grid">
-          <!-- <li>Python Programming</li> -->
-          <li>Machine Learning</li>
+        <div class="education-section">
+            <h2>Education</h2>
+            <p>Currently pursuing my academic journey with a focus on technology and innovation. My educational background provides a strong foundation in technical skills and computational thinking.</p>
+        </div>
 
-          <!-- <li>Data Analysis</li> -->
-          <li>Full Stack Web Development</li>
-          <li>Android App Development</li>
-          <li>Cloud Computing</li>
-          <!-- <li>AI/ML Algorithms</li> -->
-          <!-- <li>Deep Learning</li> -->
-          <li>Natural Language Processing</li>
-          <li>Data Visualization</li>
-          <li>Cyber Security</li>
-          <li>Penetration Testing</li>
-      </ul>
-  </div>
+        <div class="interests-section">
+            <h2>Interests & Passions</h2>
+            <p>Beyond technology, I'm passionate about continuous learning, exploring emerging tech trends, and finding innovative solutions to complex problems. I believe in the power of technology to create positive change and improve lives.</p>
+        </div>
+    </div>
 
-  <div class="education-section">
-      <h2>Education</h2>
-      <p>Currently pursuing my academic journey with a focus on technology and innovation. My educational background provides a strong foundation in technical skills and computational thinking.</p>
-  </div>
+    <div id="password-container">
+        <h2>Resume Access</h2>
+        <p>Contact at shivduttchoubey@gmail.com to receive a copy of the resume</p>
+        <input type="password" id="password-input" placeholder="Enter password">
+        <button id="submit-btn">Submit</button>
+        <div id="error-message"></div>
+    </div>
 
-  <div class="interests-section">
-      <h2>Interests & Passions</h2>
-      <p>Beyond technology, I'm passionate about continuous learning, exploring emerging tech trends, and finding innovative solutions to complex problems. I believe in the power of technology to create positive change and improve lives.</p>
-  </div>
-</div>
+    <div id="pdf-container" class="hidden">
+        <h2>My Resume</h2>
+        <iframe id="pdf-viewer" frameborder="0"></iframe>
+        <button id="close-btn">Close Resume</button>
+    </div>
 
-<!-- Resume Container Start -->
-<div id="password-container">
-  <h2>Resume Access</h2>
-  <p>Contact at  shivduttchoubey@gmail.com to Recieve a copy of resume</p>
-  <input type="password" id="password-input" placeholder="Enter password">
-  <button id="submit-btn">Submit</button>
-  <div id="error-message"></div>
-</div>
-
-<div id="pdf-container">
-  <h2>My Resume</h2>
-  <iframe id="pdf-viewer" style="width:100%; height:600px;" frameborder="0"></iframe>
-  <button id="close-btn">Close Resume</button>
-</div>
-
-<!-- Resume Container End -->
-</body>
-
-<!-- Script for Resume Password -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
     <script>
-          // Configuration (Change these values)
-          const CORRECT_PASSWORD = 'ShivDutt2024Alpha'; // Set your desired password
-        const PDF_URL = 'https://raw.githubusercontent.com/shivduttchoubey/shivduttchoubey.github.io/main/Media/ShivDuttChoubey_Resume.pdf'; 
-        // Replace with the raw GitHub URL to your PDF
-
-        // DOM Elements
-        const passwordContainer = document.getElementById('password-container');
-        const pdfContainer = document.getElementById('pdf-container');
+        const CORRECT_PASSWORD = 'password';
+        const PDF_URL = 'https://raw.githubusercontent.com/shivduttchoubey/shivduttchoubey.github.io/main/Media/ShivDuttChoubey_Resume.pdf';
+        
         const passwordInput = document.getElementById('password-input');
         const submitBtn = document.getElementById('submit-btn');
         const errorMessage = document.getElementById('error-message');
+        const pdfContainer = document.getElementById('pdf-container');
         const pdfViewer = document.getElementById('pdf-viewer');
         const closeBtn = document.getElementById('close-btn');
 
-        // Password Verification
-        submitBtn.addEventListener('click', function() {
-            const enteredPassword = passwordInput.value;
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                passwordContainer.style.display = 'none';
-                pdfContainer.style.display = 'block';
-                
-                // Load PDF
-                pdfViewer.src = `https://docs.google.com/viewer?url=${encodeURIComponent(PDF_URL)}&embedded=true`;
-                
-                // Clear any previous error messages
+        submitBtn.addEventListener('click', () => {
+            if (passwordInput.value === CORRECT_PASSWORD) {
                 errorMessage.textContent = '';
+                pdfContainer.classList.remove('hidden');
+                pdfViewer.src = `https://docs.google.com/viewer?url=${encodeURIComponent(PDF_URL)}&embedded=true`;
             } else {
                 errorMessage.textContent = 'Incorrect password. Please try again.';
                 passwordInput.value = '';
             }
         });
 
-        // Close Resume Functionality
-        closeBtn.addEventListener('click', function() {
-            pdfContainer.style.display = 'none';
-            passwordContainer.style.display = 'block';
-            pdfViewer.src = '';
+        closeBtn.addEventListener('click', () => {
+            pdfContainer.classList.add('hidden');
             passwordInput.value = '';
+            pdfViewer.src = '';
         });
 
-        // Allow Enter key to submit password
-        passwordInput.addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
+        // Add keyboard support for password input
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
                 submitBtn.click();
             }
         });
     </script>
-
-<!-- End for script of reume password -->
-
+</body>
 </html>
