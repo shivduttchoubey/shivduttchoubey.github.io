@@ -96,8 +96,19 @@ body {
 .quote-container {
     margin: 2rem auto;
     max-width: 800px;
-    padding: 2rem;
+    width: 90%; /* Add this to ensure it takes up most of the screen width */
+    padding: clamp(1rem, 4vw, 2rem); /* Responsive padding */
     text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+/* Add media query for very small screens */
+@media screen and (max-width: 480px) {
+    .quote-container {
+        margin: 1rem auto;
+        width: 95%; /* Even more width on mobile */
+        padding: 0.75rem;
+    }
 }
 
 blockquote {

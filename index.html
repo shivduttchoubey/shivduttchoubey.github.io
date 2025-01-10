@@ -24,17 +24,44 @@
         }
 
         .background-image {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('/Pages/Media/1620110507172.jpg');
-            background-size: cover;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 1s ease-in;
-            z-index: -1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/api/placeholder/1920/1080');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 1s ease-in;
+        z-index: -1;
+        object-fit: cover;
+        }
+
+        /* Media queries for background image */
+        @media screen and (max-width: 768px) {
+        .background-image {
+        background-position: center center;
+        }
+        }
+
+        @media screen and (orientation: landscape) and (max-height: 500px) {
+        .background-image {
+        background-position: center 20%;
+        }
+        }
+
+        @media screen and (min-aspect-ratio: 16/9) {
+        .background-image {
+        background-size: 100% auto;
+        }
+        }
+
+        @media screen and (max-aspect-ratio: 3/4) {
+        .background-image {
+        background-size: auto 100%;
+        }
         }
 
         .container {
