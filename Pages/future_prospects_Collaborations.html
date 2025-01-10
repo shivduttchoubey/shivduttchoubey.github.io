@@ -5,9 +5,10 @@
   <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
   <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
   <link rel="icon" href="Media\favicon.ico">
-
-
-  <title>Collaborations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+<title>Collaborations</title>
 
 <style>
 
@@ -48,40 +49,54 @@
   background-color: rgb(230, 14, 14);
 }
 
+
 #navbar {
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0rem 3rem;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  width: 100vw;
-}
+          background-color: var(--primary-color);
+          color: #fff;
+          position: relative;
+          top: 0;
+          width: 100%;
+          /* z-index: 1000; */
+          padding: 1rem 0;
+          transition: all var(--transition-speed);
+      }
 
-#navbar ul {
-  list-style: none;
-  display: flex;
-}
+      #navbar.glass-nav {
+          background: rgba(18, 18, 18, 0.8);
+          backdrop-filter: blur(10px);
+      }
 
-#navbar ul a {
-  font-family: cursive;
-  display: inline-block;
-  padding: 1.2rem 2rem;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.4rem;
-  font-weight: 500;
-  text-align: center;
-  line-height: 25px;
-  border-radius: 4px;
-}
+      #navbar ul {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+          list-style: none;
+          
+      }
 
-#navbar ul a:hover {
-    background-color: hsl(188, 63%, 37%);
-  color: black;
-}
+      #navbar a {
+         font-family: cursive;
+          color: white;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
+          border-radius: 8px;
+          transition: all var(--transition-speed);
+          font-weight: 600;
+          border-left: 3px #dde8dd solid;
+          border-right: 3px rgb(234, 238, 234) solid;
+          font-family: cursive;
+          display: inline-block;
+          padding: 1.2rem 2rem;
+          text-decoration: none;
+          font-size: 1.4rem;
+          font-weight: 500;
+      }
 
-
+      #navbar a:hover {
+          background: hwb(225 45% 52%);
+          transform: translateY(-2px);
+      }
 
 *,
 *:after,
@@ -127,7 +142,7 @@ h1 {
 }
 
 header {
-	padding: 8rem 0 2rem;
+	padding: 2rem 0 2rem;
 }
 
 .content {
@@ -210,6 +225,7 @@ blockquote {
 }
 
 .columns p {
+  font-family: jersery10;
 	font-size: .875rem;
 	text-align: justify;
 }
@@ -238,12 +254,43 @@ blockquote {
   width: 75%;
 }
 
+/* QUOTE SECTION */
+.quote-container {
+    margin: 2rem auto;
+    max-width: 800px;
+    width: 90%; /* Add this to ensure it takes up most of the screen width */
+    padding: clamp(1rem, 4vw, 2rem); /* Responsive padding */
+    text-align: center;
+    box-sizing: border-box; /* Ensures padding doesn't add to width */
+}
+
+/* Add media query for very small screens */
+@media screen and (max-width: 480px) {
+    .quote-container {
+        margin: 1rem auto;
+        width: 95%; /* Even more width on mobile */
+        padding: 0.75rem;
+    }
+}
+
+blockquote {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+blockquote footer {
+    margin-top: 1rem;
+    font-style: italic;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+
 </style>
-
-
 </head>
 
 <body>
+   
    <header id="about">
     <nav id="navbar">
       <ul>
@@ -259,7 +306,16 @@ blockquote {
     </nav>
     <hr>
   </header>
+<!-- Quote Section -->
 
+<div class="quote-container glass-effect">
+  <blockquote class="animate-fade-in">
+      "The most important skill for a computer scientist is problem-solving.
+      <br>
+      Even if you don't know all the details of the technology you are using, if you can solve the problem, you can figure out how to do it."
+      <footer>- Bill Gates, Microsoft founder</footer>
+  </blockquote>
+ </div>
 
   <div class="content">
     <header>
@@ -297,7 +353,7 @@ blockquote {
             Ipsam, nam. Incidunt quas deserunt corporis ullam non qui aut ab
             fugiat pariatur sunt, molestias voluptatibus iste dolorum velit
             dignissimos saepe facere nihil iure quos laborum cupiditate
-            dolores ducimus quaerat!
+            dolores ducimus quaerat! lorem
           </p>
         </div>
         <div class="column">
@@ -338,27 +394,5 @@ blockquote {
   </div>
 
 </body>
-
-<script>
-    import { Pane } from 'https://cdn.skypack.dev/tweakpane'
-
-const CONFIG = {
-  size: 120,
-  y: 30,
-}
-
-const CTRL = new Pane({ title: 'Configuration', expanded: false })
-
-const update = () => {
-  document.documentElement.style.setProperty('--size', CONFIG.size)
-  document.documentElement.style.setProperty('--y', CONFIG.y)
-}
-
-CTRL.addBinding(CONFIG, 'size', { min: 50, step: 1, max: 300, label: 'Size (px)' })
-CTRL.addBinding(CONFIG, 'y', { min: 0, step: 1, max: 100, label: 'Y (%)' })
-
-CTRL.on('change', update)
-update()
-</script>
 
 </html>
