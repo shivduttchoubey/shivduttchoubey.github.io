@@ -260,9 +260,23 @@ blockquote footer {
 .typewriter {
     font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1rem;
-    animation: typing 3.5s steps(40, end);
+    animation: 
+    reveal 3.5s cubic-bezier(0.4, 0.0, 0.2, 1),
+    pulse 1.5s ease-in-out infinite alternate;
+    /* animation: typing 3.5s steps(40, end); */
     color: #fff; /* Ensure text is visible on video */
 }
+/* animation queires */
+@keyframes reveal {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes pulse {
+    0% { opacity: 1 }
+    100% { opacity: 0.7 }
+}
+
 
 /* Media Queries */
 @media screen and (max-width: 480px) {
