@@ -26,39 +26,6 @@
             }
         }
 
-        @keyframes gradientFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --primary-bg: #1a202c;
-                --card-bg: #2d3748;
-                --primary-text: #f7fafc;
-                --secondary-text: #e2e8f0;
-                --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            }
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -77,7 +44,6 @@
         main {
             max-width: 1200px;
             margin: 0 auto;
-            opacity: 0;
             animation: fadeInUp 1s ease-out forwards;
         }
 
@@ -95,16 +61,6 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: gradientFlow 6s ease infinite;
-        }
-
-        .header p {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: var(--secondary-text);
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out forwards 0.5s;
         }
 
         .action-buttons {
@@ -127,32 +83,11 @@
             transition: all var(--transition-speed);
             text-decoration: none;
             display: inline-block;
-            position: relative;
-            overflow: hidden;
         }
 
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
-            animation: gradientFlow 3s ease infinite;
-        }
-
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
-            transform: scale(0);
-            opacity: 0;
-            transition: transform 0.6s, opacity 0.6s;
-        }
-
-        .btn:hover::after {
-            transform: scale(1);
-            opacity: 1;
         }
 
         .prospects-grid {
@@ -168,41 +103,11 @@
             border-radius: 1rem;
             box-shadow: var(--card-shadow);
             transition: all var(--transition-speed);
-            opacity: 0;
-            animation: fadeInUp 1s ease-out forwards;
-            animation-delay: calc(var(--card-index, 0) * 0.2s);
         }
 
         .prospect-card:hover {
             transform: translateY(-5px) scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .prospect-card h3 {
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            position: relative;
-        }
-
-        .prospect-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            transition: width 0.3s ease;
-        }
-
-        .prospect-card:hover h3::after {
-            width: 100%;
-        }
-
-        .prospect-card a {
-            text-decoration: none;
-            color: inherit;
         }
 
         .timeline {
@@ -219,7 +124,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--accent-color), transparent);
+            background: var(--accent-color);
             transform: translateX(-50%);
         }
 
@@ -228,36 +133,14 @@
             width: 50%;
             padding: 0 2rem;
             position: relative;
-            opacity: 0;
-            animation: slideIn 0.8s ease-out forwards;
-            animation-delay: calc(var(--item-index, 0) * 0.3s);
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            width: 1rem;
-            height: 1rem;
-            background: var(--accent-color);
-            border-radius: 50%;
-            top: 0;
-            animation: pulse 2s infinite;
         }
 
         .timeline-item:nth-child(odd) {
             left: 0;
         }
 
-        .timeline-item:nth-child(odd)::before {
-            right: -0.5rem;
-        }
-
         .timeline-item:nth-child(even) {
             left: 50%;
-        }
-
-        .timeline-item:nth-child(even)::before {
-            left: -0.5rem;
         }
 
         @media (max-width: 768px) {
@@ -268,10 +151,6 @@
             .timeline-item {
                 width: 100%;
                 padding-left: 3rem;
-                left: 0 !important;
-            }
-
-            .timeline-item::before {
                 left: 0 !important;
             }
 
@@ -286,67 +165,59 @@
             }
         }
 
+        /* Responsive Navigation */
+        nav {
+            background: var(--primary-bg);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem;
+            box-shadow: var(--card-shadow);
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--primary-text);
+            font-weight: bold;
+            /* border-left: 3px #dde8dd solid;
+            border-right: 3px rgb(234, 238, 234) solid; */
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
         footer {
             margin-top: 4rem;
             text-align: center;
-            opacity: 0;
-            animation: fadeInUp 1s ease-out forwards 1.5s;
         }
 
         footer iframe {
             max-width: 100%;
             width: 100%;
-            height: 758px;
+            height: 600px;
             border-radius: 1rem;
             box-shadow: var(--card-shadow);
         }
-
-
-        /* Navigation */
-        #navbar {
-    position: fixed; /* Changed from relative to absolute */
-    top: 0;
-    width: 100%;
-    z-index: 100; /* Reduced from 1000 to 2 Keep it above the video but below content  */
-    padding: 1rem 0;
-    transition: all var(--transition-speed);
-}
-
-#navbar.glass-nav {
-    /* background: rgba(18, 18, 18, 0.4); */
-    backdrop-filter: blur(10px);
-}
-
-#navbar ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    list-style: none;
-    
-}
-
-#navbar a {
-    color: var(#9f7aea);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    transition: all var(--transition-speed);
-    font-weight: 600;
-    border-left: 3px #dde8dd solid;
-    border-right: 3px rgb(234, 238, 234) solid;
-}
-
-#navbar a:hover {
-    background: var(#9f7aea);
-    transform: translateY(-2px);
-}
     </style>
 </head>
 <body>
 
     <header id="about">
-        <nav id="navbar" class="glass-nav">
+        <nav>
             <ul>
                 <li><a href="Pages/about_me.html" target="_blank">About</a></li>
                 <li><a href="Pages/projects_and_academic_work.html" target="_blank">Projects</a></li>
@@ -358,6 +229,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="header">
             <h1>Future Prospects</h1>
@@ -370,28 +242,28 @@
         </section>
 
         <section class="prospects-grid">
-            <div class="prospect-card" style="--card-index: 0">
+            <div class="prospect-card">
                 <a href="future_prospects_RESEARCH_GOALS.html">
                     <h3>Research Goals</h3>
                     <p>Focusing on advanced machine learning algorithms and their applications in real-world scenarios. Pursuing breakthrough innovations in natural language processing and computer vision.</p>
                 </a>
             </div>
 
-            <div class="prospect-card" style="--card-index: 1">
+            <div class="prospect-card">
                 <a href="future_prospects_DEVELOPMENT_PATH.html">
                     <h3>Development Path</h3>
                     <p>Expanding expertise in full-stack development with emphasis on scalable architecture and cloud-native solutions. Mastering emerging technologies and frameworks.</p>
                 </a>
             </div>
 
-            <div class="prospect-card" style="--card-index: 2">
+            <div class="prospect-card">
                 <a href="future_prospects_Collaborations.html">
                     <h3>Collaborations</h3>
                     <p>Seeking partnerships with leading research institutions and tech companies. Open to collaborative projects that push the boundaries of current technology.</p>
                 </a>
             </div>
 
-            <div class="prospect-card" style="--card-index: 3">
+            <div class="prospect-card">
                 <a href="future_prospects_Innovation Focus.html">
                     <h3>Innovation Focus</h3>
                     <p>Developing novel solutions at the intersection of AI and sustainable technology. Creating impact through practical applications of cutting-edge research.</p>
@@ -400,20 +272,21 @@
         </section>
 
         <section class="timeline">
-            <div class="timeline-item" style="--item-index: 0">
+            <div class="timeline-item">
                 <h3>2024-2025</h3>
                 <p>Publication of research papers in top-tier conferences and completion of advanced certification programs.</p>
             </div>
-            <div class="timeline-item" style="--item-index: 1">
+            <div class="timeline-item">
                 <h3>2025-2026</h3>
                 <p>Launch of innovative projects combining research findings with practical applications.</p>
             </div>
-            <div class="timeline-item" style="--item-index: 2">
+            <div class="timeline-item">
                 <h3>2026-2027</h3>
                 <p>Expansion into international collaborations and establishment of research partnerships.</p>
             </div>
         </section>
     </main>
+
     <footer>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrqB4kosfVgKycoU1eoAXE-DakOzxaKfjcw2yrXBgQH0U51A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </footer>
