@@ -8,8 +8,7 @@
     <link rel="icon" href="Media/favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <title>Shiv Dutt Choubey | Portfolio</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BFYTMLPND3"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFYTMLPND3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -18,9 +17,65 @@
   gtag('config', 'G-BFYTMLPND3');
 </script>
 
+<style>
+    /* Styling for the new form fields to sit perfectly in your glassmorphism theme */
+    .portfolio-form {
+        max-width: 600px;
+        margin: 30px auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: left;
+    }
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .portfolio-form label {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 600;
+        color: #ffffff;
+    }
+    .portfolio-form input[type="text"],
+    .portfolio-form input[type="email"],
+    .portfolio-form textarea,
+    .portfolio-form input[type="file"] {
+        padding: 12px;
+        border-radius: 5px;
+        border: 1px solid #eee2e2;
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        font-family: 'Raleway', sans-serif;
+        outline: none;
+    }
+    .portfolio-form textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+    .portfolio-form input::placeholder,
+    .portfolio-form textarea::placeholder {
+        color: #cccccc;
+    }
+    .portfolio-form button {
+        padding: 14px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffffff;
+        color: #000000;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    .portfolio-form button:hover {
+        background-color: #eee2e2;
+        transform: translateY(-2px);
+    }
+</style>
+
 </head>
 <body>
-    <!-- Header Section -->
     <header id="about">
         <nav id="navbar" class="glass-nav">
             <ul>
@@ -35,8 +90,6 @@
         </nav>
     </header>
     
-    <!-- Welcome Section -->
-
     <section id="welcome-section">
         <div class="background-container">
             <video id="titlevideo" autoplay muted loop>
@@ -67,7 +120,6 @@ Even if you don't know all the details of the technology you are using, if you c
     transform: translateY(-5px); 
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
 ">"The real danger is not that computers will begin to think like men, <br>but that men will begin to think like computers." <br>- Sydney Harris, journalist</blockquote><hr>
-    <!-- Skills Matrix Section -->
     <section class="skills-matrix glass-effect">
         <div class="container">
             <h2 class="section-title">Skills & Expertise</h2>
@@ -133,7 +185,6 @@ Even if you don't know all the details of the technology you are using, if you c
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); 
 ">"Any fool can write code that a computer can understand. <br>Good programmers write code that humans can understand." <br>- Martin Fowler, software developer </blockquote><hr>
 
-    <!-- Achievement Cards Section -->
     <section class="achievements glass-effect">
         <div class="container">
             <h2 class="section-title">Key Achievements</h2>
@@ -172,8 +223,7 @@ Even if you don't know all the details of the technology you are using, if you c
         </div>
     </section>
 
- <!-- Contact Section -->
-<section id="contact" class="glass-effect">
+ <section id="contact" class="glass-effect">
     <div class="container">
         <h2 class="section-title">Let's work together...</h2>
         <div class="social">
@@ -190,10 +240,6 @@ Even if you don't know all the details of the technology you are using, if you c
                     <i class="fas fa-envelope-open-text"></i>
                     <span>Email</span>
                 </a>
-                <!-- <a href="tel:7999027819" class="social-link">
-                    <i class="fas fa-phone"></i>
-                    <span>Call Me</span>
-                </a> -->
                 <a href="https://g.dev/shivduttchoubey" target="_blank" class="social-link">
                     <img class="gdevicon" src="Pages/Media/gdev.svg" alt="Google Developer">
                     <span>Google Developer</span>
@@ -210,21 +256,39 @@ Even if you don't know all the details of the technology you are using, if you c
 </section>
 
 
-    <!-- Newsletter Section -->
     <section class="newsletter glass-effect">
         <div class="container">
             <h2 class="section-title">Stay Connected</h2>
             <p class="newsletter-text">
-                Thank you for visiting my portfolio! If you'd like to stay updated on my latest projects
-                and insights, subscribe to my newsletter. I promise to keep it valuable and spam-free.
+                Thank you for visiting my portfolio! If you'd like to collaborate, drop a message along with an optional project attachment, or subscribe below.
             </p>
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrqB4kosfVgKycoU1eoAXE-DakOzxaKfjcw2yrXBgQH0U51A/viewform?embedded=true" 
-                    class="newsletter-form" 
-                    frameborder="0">Loading…</iframe>
+            
+            <form id="portfolioContactForm" class="portfolio-form">
+                <div class="form-row">
+                    <label for="contact_name">Your Name</label>
+                    <input type="text" id="contact_name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-row">
+                    <label for="contact_email">Email Address</label>
+                    <input type="email" id="contact_email" placeholder="john@example.com" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="contact_message">Message / Project Details</label>
+                    <textarea id="contact_message" placeholder="Tell me about your idea..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="contact_file">Attachment (Optional PDF/Image)</label>
+                    <input type="file" id="contact_file" accept=".pdf, image/*">
+                </div>
+
+                <button type="submit" id="portfolioSubmitBtn">Send Message</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="main-footer" class="glass-effect">
         <div class="container">
             <p class="footer-text">
@@ -232,5 +296,71 @@ Even if you don't know all the details of the technology you are using, if you c
             </p>
         </div>
     </footer>
+
+    <script>
+        // 1. PLACE YOUR PORTFOLIO WEB APP EXECUTION URL HERE
+        const PORTFOLIO_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzcqoi7UhmIaKD6JK1N-V7bjNVXm-zcAnYxTuZrg25uCjZJm8XjZDRWiY76c62kV01fxQ/exec';
+
+        document.getElementById('portfolioContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('portfolioSubmitBtn');
+            const originalText = submitBtn.innerText;
+            
+            submitBtn.innerText = "Sending Message...";
+            submitBtn.disabled = true;
+
+            const fileInput = document.getElementById('contact_file');
+            const file = fileInput.files[0];
+
+            const payload = {
+                contact_name: document.getElementById('contact_name').value,
+                contact_email: document.getElementById('contact_email').value,
+                contact_message: document.getElementById('contact_message').value,
+                fileData: null,
+                fileName: null
+            };
+
+            const sendPayload = () => {
+                fetch(PORTFOLIO_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    alert("Thank you! Your message and details have been recorded.");
+                    document.getElementById('portfolioContactForm').reset();
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                })
+                .catch(err => {
+                    console.error("Transmission error:", err);
+                    alert("Something went wrong with the submission. Please try again.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                });
+            };
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    payload.fileData = event.target.result;
+                    payload.fileName = file.name;
+                    sendPayload();
+                };
+                reader.onerror = function() {
+                    alert("Error parsing file binary data.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                sendPayload();
+            }
+        });
+    </script>
 </body>
 </html>
