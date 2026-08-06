@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QubiSafe Premium ID Card</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#060b18;
+  --bg2:#0b1020;
+  --blue:#00c6ff;
+  --violet:#7b2ff7;
+  --text:#e5f0ff;
+  --muted:#9fb3d9;
+  --border:rgba(255,255,255,.14);
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Montserrat',sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(0,198,255,.10), transparent 25%),
+    radial-gradient(circle at 80% 30%, rgba(123,47,247,.12), transparent 30%),
+    linear-gradient(135deg,var(--bg),#091224,var(--bg2));
+  color:var(--text);
+  min-height:100vh;
+  padding:40px 16px;
+}
+
+.wrap{
+  max-width:1000px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
+  gap:24px;
+}
+
+.card{
+  aspect-ratio:1.586;
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border:1px solid var(--border);
+  box-shadow:0 20px 50px rgba(0,0,0,.45);
+  backdrop-filter: blur(12px);
+}
+
+.card:before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size:22px 22px;
+  pointer-events:none;
+}
+
+.topline{
+  position:absolute;
+  top:0; left:0; right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--violet));
+}
+
+.glow{
+  position:absolute;
+  inset:auto -20% -30% auto;
+  width:220px;
+  height:220px;
+  background:radial-gradient(circle, rgba(123,47,247,.35), transparent 70%);
+  filter:blur(8px);
+}
+
+.logo-bg{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:.07;
+  z-index:0;
+  pointer-events:none;
+}
+
+.logo-bg img{
+  width:230px;
+  height:auto;
+}
+
+.content{
+  position:relative;
+  z-index:2;
+  padding:18px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+
+.brand{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+}
+
+.logo{
+  font-family:'Orbitron',sans-serif;
+  font-size:20px;
+  line-height:1.1;
+}
+
+.tag{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+.badge{
+  border:1px solid rgba(0,198,255,.35);
+  background:rgba(0,198,255,.10);
+  color:#bfe8ff;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:700;
+}
+
+.main{
+  display:flex;
+  gap:16px;
+  margin-top:18px;
+}
+
+.photo{
+  width:104px;
+  height:124px;
+  border-radius:18px;
+  overflow:hidden;
+  border:2px solid rgba(255,255,255,.25);
+  flex-shrink:0;
+}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.name{
+  font-size:22px;
+  font-weight:800;
+  line-height:1.05;
+}
+
+.role{
+  margin-top:6px;
+  color:#b7d6ff;
+  font-size:13px;
+  font-weight:600;
+}
+
+.idline{
+  margin-top:10px;
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:11px;
+}
+
+.meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:16px;
+}
+
+.meta div{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:8px 10px;
+}
+
+.label{
+  font-size:10px;
+  text-transform:uppercase;
+  color:#9fb3d9;
+}
+
+.value{
+  margin-top:2px;
+  font-size:12px;
+  font-weight:700;
+}
+
+.address{
+  margin-top:16px;
+  padding:12px;
+  border-radius:14px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:10px;
+  line-height:1.5;
+  color:#cbd5e1;
+}
+
+.notice{
+  font-size:11px;
+  line-height:1.55;
+  color:#cbd5e1;
+  margin-top:14px;
+}
+
+.rule{
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--blue),var(--violet));
+  margin:10px 0 14px;
+}
+
+.link-box{
+  padding:8px 10px;
+  border-radius:10px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:10px;
+  word-break:break-all;
+}
+
+.qr-wrap{
+  margin-top:14px;
+  text-align:center;
+  padding:14px;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.qr-wrap img{
+  width:120px;
+  height:120px;
+  background:#fff;
+  border-radius:12px;
+  padding:8px;
+}
+
+.sign-area{
+  margin-top:18px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.sign-box{
+  width:180px;
+  text-align:center;
+}
+
+.sign-line{
+  height:42px;
+  border-bottom:1px solid rgba(255,255,255,.6);
+  margin-bottom:6px;
+}
+
+.footer{
+  margin-top:auto;
+  font-size:10px;
+  color:#9fb3d9;
+  text-align:center;
+}
+
+.watermark{
+  position:absolute;
+  right:-10px;
+  bottom:0;
+  font-size:84px;
+  font-weight:800;
+  opacity:.05;
+  transform:rotate(-18deg);
+  font-family:'Orbitron',sans-serif;
+}
+
+@media print{
+  body{background:#fff;padding:0}
+  .wrap{gap:12px}
+  .card{
+    box-shadow:none;
+    border:1px solid #bbb;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- ================= FRONT ================= -->
+  <div class="card">
+    <div class="topline"></div>
+    <div class="glow"></div>
+
+    <!-- Center background logo -->
+    <div class="logo-bg">
+      <!-- Replace with actual company logo -->
+      <img src="Media\favicon.jpg" alt="QubiSafe Logo">
+    </div>
+
+    <div class="content">
+
+      <div class="brand">
+        <div>
+          <div class="logo">QUBISAFE PRIVATE LIMITED</div>
+          <div class="tag">Quantum Binary Safety</div>
+        </div>
+        <div class="badge">DIGITAL ID</div>
+      </div>
+
+      <div class="main">
+        <div class="photo">
+          <img src="https://i.pravatar.cc/300?img=12" alt="Employee Photo">
+        </div>
+
+        <div>
+          <div class="name">AARAV<br>SHARMA</div>
+          <div class="role">Cybersecurity Research Engineer</div>
+          <div class="idline">ID • QBS-RD-0147</div>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div>
+          <div class="label">Department</div>
+          <div class="value">Quantum Security Lab</div>
+        </div>
+        <div>
+          <div class="label">Engagement</div>
+          <div class="value">3 Months</div>
+        </div>
+        <div>
+          <div class="label">Issued On</div>
+          <div class="value">06 Aug 2026</div>
+        </div>
+        <div>
+          <div class="label">Valid Till</div>
+          <div class="value">05 Aug 2028</div>
+        </div>
+      </div>
+
+      <div class="address">
+        <strong>QubiSafe Private Limited</strong><br>
+        Jabalpur, Madhya Pradesh, India
+      </div>
+
+      <!-- Links fixed at bottom -->
+      <div style="margin-top:auto; display:flex; flex-direction:column; gap:8px;">
+        <div class="link-box">
+          <strong>Website:</strong> https://qubisafe.com
+        </div>
+        <div class="link-box">
+          <strong>LinkedIn:</strong> https://linkedin.com/company/qubisafe
+        </div>
+      </div>
+
+      <div class="footer" style="margin-top:10px;">
+        Official Company Credential
+      </div>
+
+      <!-- <div class="watermark">QBS</div> -->
+    </div>
+  </div>
+
+  <!-- ================= BACK ================= -->
+  <div class="card">
+    <div class="topline"></div>
+    <div class="glow"></div>
+
+    <!-- Center background logo -->
+    <div class="logo-bg">
+      <!-- Replace with actual company logo -->
+      <img src="logo-placeholder.svg" alt="QubiSafe Logo">
+    </div>
+
+    <div class="content">
+
+      <div style="font-family:'Orbitron',sans-serif;font-size:16px;">
+        AARAV SHARMA
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="meta">
+        <div>
+          <div class="label">Blood Group</div>
+          <div class="value">B+</div>
+        </div>
+        <div>
+          <div class="label">Emergency</div>
+          <div class="value">+91 98XXXXXX10</div>
+        </div>
+        <div>
+          <div class="label">Email</div>
+          <div class="value">name@qubisafe.com</div>
+        </div>
+        <div>
+          <div class="label">Address</div>
+          <div class="value">Employee Address</div>
+        </div>
+      </div>
+
+      <!-- QR placeholder -->
+      <div class="qr-wrap">
+        <div style="font-size:11px;color:#9fb3d9;margin-bottom:10px;">
+          QR Verification (SVG Placeholder)
+        </div>
+
+        <!-- Replace with actual QR SVG -->
+        <img src="qr-placeholder.svg" alt="QR Code">
+
+        <div style="margin-top:10px;font-size:10px;color:#cbd5e1;">
+          Scan to verify this credential
+        </div>
+      </div>
+
+      <p class="notice">
+        This credential is digitally verifiable through the embedded QR code and QubiSafe verification system.
+        Unauthorized possession, duplication, or alteration is strictly prohibited.
+      </p>
+
+      <!-- Authority signature ONLY on back -->
+      <div class="sign-area">
+        <div class="sign-box">
+          <div class="sign-line"></div>
+          <div style="font-size:11px;font-weight:700;">Managing Director</div>
+          <div style="font-size:10px;color:#9fb3d9;">Issuing Authority</div>
+        </div>
+      </div>
+
+      <!-- Links below signature at absolute bottom -->
+      <div style="margin-top:auto; display:flex; flex-direction:column; gap:8px;">
+        <div class="link-box">
+          <strong>LinkedIn:</strong> https://linkedin.com/in/aaravsharma
+        </div>
+        <div class="link-box">
+          <strong>GitHub:</strong> https://github.com/aaravsharma
+        </div>
+        <div class="link-box">
+          <strong>Portfolio:</strong> https://aaravsharma.dev
+        </div>
+      </div>
+
+      <div class="footer" style="margin-top:10px;">
+        QubiSafe Private Limited • www.qubisafe.com
+      </div>
+
+      <!-- <div class="watermark">QBS</div> -->
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
