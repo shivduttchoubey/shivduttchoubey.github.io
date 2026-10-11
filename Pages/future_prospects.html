@@ -3,302 +3,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Future Prospects</title>
+    <link rel="icon" href="Media/favicon.jpg">
+    <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Future Prospects | Shiv Dutt Choubey</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFYTMLPND3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-BFYTMLPND3');
+    </script>
     <style>
-        :root {
-            --primary-bg: #f8f9fa;
-            --card-bg: #ffffff;
-            --primary-text: #2d3748;
-            --secondary-text: #4a5568;
-            --accent-color: #7c3aed;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --transition-speed: 0.3s;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--primary-bg);
-            color: var(--primary-text);
+            background: #09090d;
+            font-family: 'Raleway', sans-serif;
+            color: #ffffff;
             line-height: 1.6;
-            padding: 2rem 1rem;
-            transition: background-color var(--transition-speed);
+            padding: 90px 15px 40px;
+            overflow-x: hidden;
         }
 
         main {
             max-width: 1200px;
             margin: 0 auto;
-            animation: fadeInUp 1s ease-out forwards;
         }
 
-        .header {
+        .header-section {
             text-align: center;
-            margin-bottom: 4rem;
-            padding: 2rem;
+            margin-bottom: 3.5rem;
+            padding: 1rem;
         }
 
-        .header h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .header-section h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            font-family: 'Playfair Display', serif;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--accent-color), #9f7aea, #7c3aed);
-            background-size: 200% 200%;
+            background: linear-gradient(135deg, #6200ea, #64ffda, #a78bfa);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
 
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 0.5rem;
-            background: linear-gradient(135deg, var(--accent-color), #9f7aea);
-            background-size: 200% 200%;
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all var(--transition-speed);
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+        .header-section p {
+            font-size: 1.1rem;
+            color: #94a3b8;
+            max-width: 750px;
+            margin: 0 auto;
         }
 
         .prospects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            padding: 1rem;
+            padding: 0.5rem 0 2rem;
         }
 
         .prospect-card {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
             padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: var(--card-shadow);
             transition: all var(--transition-speed);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
         }
 
         .prospect-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: #64ffda;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4);
         }
 
-        .timeline {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--accent-color);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            margin: 2rem 0;
-            width: 50%;
-            padding: 0 2rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        @media (max-width: 768px) {
-            .timeline::before {
-                left: 1rem;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 3rem;
-                left: 0 !important;
-            }
-
-            .action-buttons {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 0 1rem;
-            }
-
-            .btn {
-                text-align: center;
-            }
-        }
-
-        /* Responsive Navigation */
-        nav {
-            background: var(--primary-bg);
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1rem;
-            box-shadow: var(--card-shadow);
-            z-index: 1000;
-        }
-
-        nav ul {
+        /* Remove underline from cards and descriptions */
+        .prospect-card a {
+            text-decoration: none !important;
+            color: inherit;
             display: flex;
-            justify-content: space-around;
-            list-style: none;
-            flex-wrap: wrap;
-            gap: 1rem;
-
+            flex-direction: column;
+            height: 100%;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--primary-text);
-            font-weight: bold;
-            /* border-left: 3px #dde8dd solid;
-            border-right: 3px rgb(234, 238, 234) solid; */
+        .prospect-card h3 {
+            text-decoration: none !important;
+            font-size: 1.35rem;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
         }
 
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-            }
+        .prospect-card h3 i {
+            color: #64ffda;
+            font-size: 1.2rem;
         }
 
-        footer {
-            margin-top: 4rem;
-            text-align: center;
+        .prospect-card p {
+            text-decoration: none !important;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+            flex-grow: 1;
         }
 
-        footer iframe {
-            max-width: 100%;
-            width: 100%;
-            height: 600px;
-            border-radius: 1rem;
-            box-shadow: var(--card-shadow);
+        .card-explore-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #64ffda;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .prospect-card:hover .card-explore-link {
+            transform: translateX(4px);
+            color: #ffffff;
+        }
+
+        /* Normal contact form styling */
+        .contact-section {
+            max-width: 700px;
+            margin: 4rem auto 2rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
         }
     </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BFYTMLPND3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BFYTMLPND3');
-</script>
-
 </head>
 <body>
 
-    <header id="about">
-        <nav>
-            <ul>
-                <li><a href="about.html" target="_blank">About</a></li>
-                <li><a href="projects_academics.html" target="_blank">Projects</a></li>
-                <li><a href="certifications.html" target="_blank">Certifications</a></li>
-                <li><a href="research.html" target="_blank">Research</a></li>
-                <li><a href="future_prospects.html" target="_blank">Future Prospects</a></li>
-                <li><a href="https://shivduttchoubey.substack.com/" target="_blank">My Newsletter</a></li>
-                <li><a href="https://shivduttchoubey.github.io\landing_page.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Unified Header -->
+    <header id="site-header"></header>
 
     <main>
-        <section class="header">
-            <h1>Future Prospects</h1>
-            <p>Exploring the intersection of development, research, and innovation in technology</p>
+        <section class="header-section">
+            <h1>Future Prospects &amp; Vision</h1>
+            <p>Advancing the frontier of Quantum-Safe Cryptography, Systems Security Engineering, and Collaborative Cyber Defense.</p>
         </section>
 
-        <!-- <section class="action-buttons">
-            <a href="https://docs.google.com/document/d/1Helh-N95PiQXviEHNB8cJZ32SFUgmd_X/edit" class="btn">View CV</a>
-            <a href="#" class="btn">Research Papers</a>
-        </section> -->
-
+        <!-- Prospects Grid (Without any underlines) -->
         <section class="prospects-grid">
+            <!-- Card 1: Research Goals -->
             <div class="prospect-card">
                 <a href="future_prospects_RESEARCH_GOALS.html">
-                    <h3>Research Goals</h3>
-                    <p>Focusing on advanced machine learning algorithms and their applications in real-world scenarios. Pursuing breakthrough innovations in natural language processing and computer vision.</p>
+                    <h3><i class="fas fa-atom"></i> Research Goals</h3>
+                    <p>Focusing on Post-Quantum Cryptography (PQC), quantum repeater interfaces, and defensive barriers against Harvest-Now-Decrypt-Later (HNDL) attacks. Investigating QKD simulation on the Qniverse platform and AI-driven IDPS anomaly detection.</p>
+                    <span class="card-explore-link">Explore Research Goals <i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
 
+            <!-- Card 2: Development Path -->
             <div class="prospect-card">
                 <a href="future_prospects_DEVELOPMENT_PATH.html">
-                    <h3>Development Path</h3>
-                    <p>Expanding expertise in full-stack development with emphasis on scalable architecture and cloud-native solutions. Mastering emerging technologies and frameworks.</p>
+                    <h3><i class="fas fa-code-branch"></i> Development Path</h3>
+                    <p>Engineering low-overhead network defense IDPS (Netflow Monitor), CSPM cloud risk-scoring engines (QuantumPosture), and AST-based compiler security tools. Advancing secure systems programming in Modern C++, Python, and 5G-RAN.</p>
+                    <span class="card-explore-link">Explore Development Path <i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
 
+            <!-- Card 3: Collaborations -->
             <div class="prospect-card">
                 <a href="future_prospects_Collaborations.html">
-                    <h3>Collaborations</h3>
-                    <p>Seeking partnerships with leading research institutions and tech companies. Open to collaborative projects that push the boundaries of current technology.</p>
+                    <h3><i class="fas fa-handshake"></i> Collaborations</h3>
+                    <p>Actively seeking joint research partnerships with national cybersecurity laboratories (NFSU, IITs, C-DAC), defense institutions, and open-source cybersecurity consortia to pioneer resilient quantum-safe standards.</p>
+                    <span class="card-explore-link">Explore Collaborations <i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
 
+            <!-- Card 4: Innovation Focus -->
             <div class="prospect-card">
                 <a href="future_prospects_Innovation Focus.html">
-                    <h3>Innovation Focus</h3>
-                    <p>Developing novel solutions at the intersection of AI and sustainable technology. Creating impact through practical applications of cutting-edge research.</p>
+                    <h3><i class="fas fa-lightbulb"></i> Innovation Focus</h3>
+                    <p>Developing applied cybersecurity innovations with direct societal and industrial impact: protecting SMBs from cyberattacks, securing clinical telemetry (LiveMedQR), and bridging data privacy law (DPDP Act, GDPR) with technical security controls.</p>
+                    <span class="card-explore-link">Explore Innovation Focus <i class="fas fa-arrow-right"></i></span>
                 </a>
             </div>
         </section>
 
-        <section class="timeline">
-            <div class="timeline-item">
-                <h3>2024-2025</h3>
-                <p>Publication of research papers in top-tier conferences and completion of advanced certification programs.</p>
+        <!-- Enhanced Interactive Timeline Section -->
+        <section style="margin-top: 5rem;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-size: 2rem; font-family: 'Playfair Display', serif;"><i class="fas fa-project-diagram" style="color: #64ffda;"></i> Strategic Roadmap &amp; Milestones</h2>
+                <p style="color: #94a3b8; max-width: 700px; margin: 0.5rem auto;">A structured progression from pre-doctoral research to national impact and frontier defense.</p>
             </div>
-            <div class="timeline-item">
-                <h3>2025-2026</h3>
-                <p>Launch of innovative projects combining research findings with practical applications.</p>
+
+            <div class="timeline-track">
+                <!-- Milestone 1 -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">2024 – 2025</span>
+                            <span class="timeline-status completed">Completed &bull; 12 Months</span>
+                        </div>
+                        <h3>Quantum Architecture &amp; IIT Kharagpur Fellowship</h3>
+                        <div class="timeline-org">IIT Kharagpur Pre-Doctoral Fellow (NPTEL Sponsored)</div>
+                        <p>Completed intensive on-site research on Quantum Internet Architecture, Post-Quantum Modern Networking, and IIoT communication protocols. Completed 14+ technical IIT certifications and authored technical deliverables.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div class="timeline-node active">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">2025 – 2026</span>
+                            <span class="timeline-status">Active Execution &bull; SPI: 9.05</span>
+                        </div>
+                        <h3>Post-Quantum Security Tools &amp; Digital Forensics</h3>
+                        <div class="timeline-org">NFSU Gandhinagar &bull; Digital Forensics Lab</div>
+                        <p>Deployment of <em>QuantumPosture</em> (CSPM scanner) and <em>ERIV</em> (semantic decryption layer). Attained FACT 2026 Digital Forensics qualification, Fortinet NSE certifications, and selected for national presentation at the 5G Innovation Hackathon by DoT, Govt. of India.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">2026 – 2027</span>
+                            <span class="timeline-status upcoming">Target Milestone</span>
+                        </div>
+                        <h3>Master's Thesis &amp; International Research Publications</h3>
+                        <div class="timeline-org">NFSU M.Sc. Cyber Security Thesis &bull; Peer-Reviewed Papers</div>
+                        <p>Finalizing thesis on Quantum Internet defense mechanisms and post-quantum migration benchmarks. Presenting findings at top-tier international cryptography and network security conferences.</p>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">2027 &amp; Beyond</span>
+                            <span class="timeline-status upcoming">Strategic Vision</span>
+                        </div>
+                        <h3>Doctoral Research &amp; Critical Infrastructure Cyber Defense</h3>
+                        <div class="timeline-org">Frontier Security Leadership &bull; National Tech Policy</div>
+                        <p>Spearheading next-generation post-quantum cybersecurity architectures and public policy initiatives to safeguard critical defense and healthcare infrastructure against emergent quantum-era threats.</p>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-item">
-                <h3>2026-2027</h3>
-                <p>Expansion into international collaborations and establishment of research partnerships.</p>
-            </div>
+        </section>
+
+        <!-- Normal Contact Form (Replacing Google Form) -->
+        <section class="contact-section glass-effect">
+            <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 0.5rem;"><i class="fas fa-paper-plane" style="color: #64ffda;"></i> Initiate a Collaboration</h2>
+            <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem;">Interested in collaborative research, quantum-safe consultation, or technical innovation? Leave a message below.</p>
+
+            <form id="prospectsContactForm" class="portfolio-form" style="margin-top: 0;">
+                <div class="form-row">
+                    <label for="p_contact_name">Your Name</label>
+                    <input type="text" id="p_contact_name" placeholder="Dr. Jane Smith / Tech Lead" required>
+                </div>
+                
+                <div class="form-row">
+                    <label for="p_contact_email">Email Address</label>
+                    <input type="email" id="p_contact_email" placeholder="jane@institution.edu" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="p_contact_message">Collaboration Proposal / Research Inquiry</label>
+                    <textarea id="p_contact_message" placeholder="Describe the project, research synergy, or proposed initiative..." required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <label for="p_contact_file">Attachment (Optional Proposal / Document)</label>
+                    <input type="file" id="p_contact_file" accept=".pdf, image/*">
+                </div>
+
+                <button type="submit" id="p_submitBtn">Submit Proposal</button>
+            </form>
         </section>
     </main>
 
-    <footer>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrqB4kosfVgKycoU1eoAXE-DakOzxaKfjcw2yrXBgQH0U51A/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </footer>
+    <!-- Unified Footer -->
+    <footer id="site-footer"></footer>
+
+    <script src="header-footer.js"></script>
+
+    <script>
+        const PORTFOLIO_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzcqoi7UhmIaKD6JK1N-V7bjNVXm-zcAnYxTuZrg25uCjZJm8XjZDRWiY76c62kV01fxQ/exec';
+
+        document.getElementById('prospectsContactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('p_submitBtn');
+            const originalText = submitBtn.innerText;
+            
+            submitBtn.innerText = "Transmitting Proposal...";
+            submitBtn.disabled = true;
+
+            const fileInput = document.getElementById('p_contact_file');
+            const file = fileInput.files[0];
+
+            const payload = {
+                contact_name: document.getElementById('p_contact_name').value,
+                contact_email: document.getElementById('p_contact_email').value,
+                contact_message: document.getElementById('p_contact_message').value,
+                fileData: null,
+                fileName: null
+            };
+
+            const sendPayload = () => {
+                fetch(PORTFOLIO_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    alert("Thank you! Your collaboration proposal has been recorded successfully.");
+                    document.getElementById('prospectsContactForm').reset();
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                })
+                .catch(err => {
+                    console.error("Submission error:", err);
+                    alert("There was an issue transmitting the form. Please try again or email directly.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                });
+            };
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    payload.fileData = event.target.result;
+                    payload.fileName = file.name;
+                    sendPayload();
+                };
+                reader.onerror = function() {
+                    alert("Error parsing file binary data.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                };
+                reader.readAsDataURL(file);
+            } else {
+                sendPayload();
+            }
+        });
+    </script>
 </body>
 </html>

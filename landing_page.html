@@ -76,19 +76,8 @@
 
 </head>
 <body>
-    <header id="about">
-        <nav id="navbar" class="glass-nav">
-            <ul>
-                <li><a href="Pages/about.html" target="_blank">About</a></li>
-                <li><a href="Pages/projects_academics.html" target="_blank">Projects</a></li>
-                <li><a href="Pages/certifications.html" target="_blank">Certifications</a></li>
-                <li><a href="Pages/research.html" target="_blank">Research</a></li>
-                <li><a href="Pages/future_prospects.html" target="_blank">Future Prospects</a></li>
-                <li><a href="https://shivduttchoubey.substack.com/" target="_blank">My Newsletter</a></li>
-                <li><a href="https://shivduttchoubey.github.io\landing_page.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header id="site-header"></header>
+
     
     <section id="welcome-section">
         <div class="background-container">
@@ -98,12 +87,18 @@
         </div>
         <div class="content-wrapper">
             <div class="typewriter">Hello 👋,<br> I'm Shiv Dutt Choubey</div>
-            <div class="quote-container">
-                <blockquote>
-                    "The most important skill for a computer scientist is problem-solving.<br>
-Even if you don't know all the details of the technology you are using, if you can solve the problem, you can figure out how to do it."
-                    <footer>- Bill Gates, Microsoft founder</footer>
-                </blockquote>
+            <div class="summary-container glass-effect">
+                <div class="summary-badge"><i class="fas fa-shield-alt"></i> Cybersecurity Researcher &amp; Engineer</div>
+                <p class="summary-text">
+                    Motivated Cyber Security graduate student and researcher pursuing an M.Sc. in Cyber Security at the National Forensic Sciences University (NFSU), Gandhinagar (CGPA: 9.05). Former NPTEL Pre-Doctoral Fellow at IIT Kharagpur, conducting research on Quantum Internet Architecture and Post-Quantum Modern Networking. Skilled in network security, ethical hacking, cryptography, post-quantum cryptography, IoT/IIoT security, secure API development, intrusion detection, and AI-driven security solutions. Knowledgeable in global data privacy frameworks (DPDP Act, GDPR, EU AI Act) and implementing security controls aligned with NIST, ISO/IEC 27001, and ISO/IEC 42001. Passionate about engineering resilient systems, analyzing emergent cyber threats, and solving complex security challenges through practical innovation.
+                </p>
+                <div class="summary-tags">
+                    <span><i class="fas fa-atom"></i> Post-Quantum Cryptography</span>
+                    <span><i class="fas fa-network-wired"></i> IDPS &amp; Network Defense</span>
+                    <span><i class="fas fa-user-shield"></i> Ethical Hacking &amp; Pentesting</span>
+                    <span><i class="fas fa-microchip"></i> IIoT &amp; Embedded Security</span>
+                    <span><i class="fas fa-balance-scale"></i> Privacy &amp; AI Governance</span>
+                </div>
             </div>
         </div>
     </section>
@@ -122,54 +117,140 @@ Even if you don't know all the details of the technology you are using, if you c
 ">"The real danger is not that computers will begin to think like men, <br>but that men will begin to think like computers." <br>- Sydney Harris, journalist</blockquote><hr>
     <section class="skills-matrix glass-effect">
         <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Skills</th>
-                        <th>Proficiency</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Programming Languages</td>
-                        <td>Python, JavaScript, Java, C++</td>
-                        <td>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 90%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Web Technologies</td>
-                        <td>HTML5, CSS3, React, Node.js</td>
-                        <td>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 85%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Database Management</td>
-                        <td>MySQL, MongoDB, PostgreSQL</td>
-                        <td>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 80%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cloud & DevOps</td>
-                        <td>AWS, Docker, Git, CI/CD</td>
-                        <td>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 75%"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2 class="section-title">Skills &amp; Expertise</h2>
+            <div class="skills-pro-grid">
+                <!-- 1. Network Security & IDPS -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Network Security &amp; IDPS</h3>
+                    </div>
+                    <p class="skill-desc">Network flow anomaly detection, intrusion detection/prevention systems (IDPS), firewall rules, device hardening, and MITRE ATT&amp;CK threat mapping.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">IDPS Architecture</span>
+                        <span class="skill-pill">Netflow Analysis</span>
+                        <span class="skill-pill">Snort / Suricata</span>
+                        <span class="skill-pill">Traffic Anomaly Detection</span>
+                        <span class="skill-pill">MITRE ATT&amp;CK</span>
+                    </div>
+                </div>
+
+                <!-- 2. Cryptography & Post-Quantum Security -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-key"></i>
+                        <h3>Cryptography &amp; Post-Quantum</h3>
+                    </div>
+                    <p class="skill-desc">Lattice cryptography, Quantum Internet protocols, post-quantum cryptographic migration, and defense against Harvest-Now-Decrypt-Later (HNDL) attacks.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Post-Quantum Protocols</span>
+                        <span class="skill-pill">HNDL Risk Scoring</span>
+                        <span class="skill-pill">Quantum Architecture</span>
+                        <span class="skill-pill">Semantic Encryption</span>
+                        <span class="skill-pill">TLS / Posture Analysis</span>
+                    </div>
+                </div>
+
+                <!-- 3. Ethical Hacking & Pentesting -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-user-secret"></i>
+                        <h3>Ethical Hacking &amp; Pentesting</h3>
+                    </div>
+                    <p class="skill-desc">Vulnerability assessment, network penetration testing, web and mobile application security auditing, and reverse engineering.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Wireshark &amp; Nmap</span>
+                        <span class="skill-pill">Metasploit</span>
+                        <span class="skill-pill">OWASP Top 10</span>
+                        <span class="skill-pill">Burp Suite / ZAP</span>
+                        <span class="skill-pill">MobSF &amp; Frida</span>
+                    </div>
+                </div>
+
+                <!-- 4. Languages & Secure Programming -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Languages &amp; Secure Coding</h3>
+                    </div>
+                    <p class="skill-desc">Systems programming, memory safety, AST-based source verification, and high-performance secure RESTful backend integration.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Python</span>
+                        <span class="skill-pill">Modern C++</span>
+                        <span class="skill-pill">Java</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">Kotlin</span>
+                        <span class="skill-pill">Bash / Shell</span>
+                        <span class="skill-pill">SQL</span>
+                    </div>
+                </div>
+
+                <!-- 5. AI, ML & Threat Intelligence -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI / ML &amp; Security Analytics</h3>
+                    </div>
+                    <p class="skill-desc">Machine learning for anomaly detection, Natural Language Processing pipelines, secure federated learning, and automated threat intelligence.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">PyTorch &amp; TensorFlow</span>
+                        <span class="skill-pill">NLP Pipelines</span>
+                        <span class="skill-pill">Secure Federated Learning</span>
+                        <span class="skill-pill">AST Analysis</span>
+                        <span class="skill-pill">Threat Intelligence</span>
+                    </div>
+                </div>
+
+                <!-- 6. Digital Forensics & Incident Response -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-search"></i>
+                        <h3>Digital Forensics &amp; IR</h3>
+                    </div>
+                    <p class="skill-desc">Forensic Aptitude &amp; Caliber Test (FACT 2026) qualified in Digital Forensics. Disk image reconstruction, memory analysis, and anti-forensics investigation.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">FACT 2026</span>
+                        <span class="skill-pill">Autopsy</span>
+                        <span class="skill-pill">Volatility</span>
+                        <span class="skill-pill">FTK Imager</span>
+                        <span class="skill-pill">Magnet Axiom</span>
+                        <span class="skill-pill">VeraCrypt Analysis</span>
+                    </div>
+                </div>
+
+                <!-- 7. Cloud, Systems & IIoT Security -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-shield-virus"></i>
+                        <h3>Cloud, Systems &amp; IIoT</h3>
+                    </div>
+                    <p class="skill-desc">Cloud Security Posture Management (CSPM), container security, Linux internals, Industrial IoT (IIoT), LoRa radio encryption, and 5G-RAN.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Docker &amp; Kubernetes</span>
+                        <span class="skill-pill">Linux Internals</span>
+                        <span class="skill-pill">LoRa Radio Protocol</span>
+                        <span class="skill-pill">Healthcare IoT</span>
+                        <span class="skill-pill">5G RAN</span>
+                    </div>
+                </div>
+
+                <!-- 8. Privacy, Governance & Compliance -->
+                <div class="skill-card-pro">
+                    <div class="skill-header">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Privacy, Governance &amp; Standards</h3>
+                    </div>
+                    <p class="skill-desc">Data privacy engineering, global regulation alignment, cybersecurity baselines, and intellectual property/patent landscape analysis.</p>
+                    <div class="skill-pills">
+                        <span class="skill-pill">DPDP Act (India)</span>
+                        <span class="skill-pill">GDPR</span>
+                        <span class="skill-pill">EU AI Act</span>
+                        <span class="skill-pill">NIST CSF</span>
+                        <span class="skill-pill">ISO/IEC 27001 &amp; 42001</span>
+                        <span class="skill-pill">Patent Creation</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -189,34 +270,52 @@ Even if you don't know all the details of the technology you are using, if you c
         <div class="container">
             <h2 class="section-title">Key Achievements</h2>
             <div class="achievement-grid">
-                <div class="achievement-card">
-                    <i class="fas fa-code card-icon"></i>
-                    <h3>Problem Solving</h3>
-                    <p>Various Coding Problems Solved</p>
-                    <ul>
-                        <li>LeetCode</li>
-                        <li>HackerRank</li>
-                        <li>CodeChef</li>
+                <!-- Achievement 1: IIT Kharagpur Fellowship -->
+                <div class="achievement-pro-card">
+                    <div class="achievement-card-top">
+                        <i class="fas fa-atom achievement-icon"></i>
+                        <span class="achievement-badge">Research Fellowship</span>
+                    </div>
+                    <h3>IIT Kharagpur Pre-Doctoral Fellow</h3>
+                    <div class="achievement-subtitle">NPTEL Sponsored Project &bull; 12 Months</div>
+                    <p>Conducted applied research on Quantum Internet Architecture, Post-Quantum Modern Networking, and Healthcare IIoT security frameworks.</p>
+                    <ul class="achievement-bullets">
+                        <li><i class="fas fa-check-circle"></i> Designed post-quantum crypto protocols for next-gen Internet</li>
+                        <li><i class="fas fa-check-circle"></i> Proposed novel communication frameworks for IIoT environments</li>
+                        <li><i class="fas fa-check-circle"></i> Authored technical deliverables and research reports</li>
                     </ul>
                 </div>
-                <div class="achievement-card">
-                    <i class="fas fa-project-diagram card-icon"></i>
-                    <h3>Projects Completed</h3>
-                    <p>5+ Major Projects</p>
-                    <ul>
-                        <li>Web Applications</li>
-                        <li>Mobile Apps</li>
-                        <li>ML Models</li>
+
+                <!-- Achievement 2: Hackathons & Competition Honors -->
+                <div class="achievement-pro-card">
+                    <div class="achievement-card-top">
+                        <i class="fas fa-trophy achievement-icon"></i>
+                        <span class="achievement-badge">National Honors</span>
+                    </div>
+                    <h3>Hackathons &amp; Cyber Competitions</h3>
+                    <div class="achievement-subtitle">National &amp; Inter-Group Recognition</div>
+                    <p>Demonstrated offensive and defensive cybersecurity excellence under competitive conditions.</p>
+                    <ul class="achievement-bullets">
+                        <li><i class="fas fa-trophy"></i> <strong>1st Position:</strong> Inter-Group Cyber Security Presentation (Emerging Phishing &amp; Social Engineering)</li>
+                        <li><i class="fas fa-award"></i> <strong>National Presentation:</strong> 5G Innovation Hackathon 2026 (DoT, Govt. of India)</li>
+                        <li><i class="fas fa-microchip"></i> <strong>Quantum Conclave 2026:</strong> C-DAC Pune &amp; IIT Delhi workshop on Qniverse</li>
+                        <li><i class="fas fa-shield-alt"></i> <strong>Anti-Forensics Hackathon:</strong> Detected VeraCrypt hidden volumes</li>
                     </ul>
                 </div>
-                <div class="achievement-card">
-                    <i class="fas fa-certificate card-icon"></i>
-                    <h3>Certifications</h3>
-                    <p>Undergoing Professional Certifications</p>
-                    <ul>
-                        <li>AWS</li>
-                        <li>Google Cloud</li>
-                        <li>Microsoft Azure</li>
+
+                <!-- Achievement 3: Professional Certifications & FACT -->
+                <div class="achievement-pro-card">
+                    <div class="achievement-card-top">
+                        <i class="fas fa-certificate achievement-icon"></i>
+                        <span class="achievement-badge">Accreditations</span>
+                    </div>
+                    <h3>National &amp; Industry Credentials</h3>
+                    <div class="achievement-subtitle">Digital Forensics, Fortinet &amp; 14+ IIT Certs</div>
+                    <p>Rigorous professional validation across digital forensics, network defense, artificial intelligence, and operating systems.</p>
+                    <ul class="achievement-bullets">
+                        <li><i class="fas fa-check-circle"></i> <strong>FACT 2026 Qualified:</strong> Forensic Aptitude &amp; Caliber Test (Digital Forensics)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Fortinet Certified:</strong> NSE 3 (Associate) &amp; NSE 1-2 (Fundamentals)</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>14+ IIT NPTEL Certifications:</strong> Ethical Hacking, Applied AI, Networks, Modern C++, IP Management</li>
                     </ul>
                 </div>
             </div>
@@ -289,13 +388,9 @@ Even if you don't know all the details of the technology you are using, if you c
         </div>
     </section>
 
-    <footer id="main-footer" class="glass-effect">
-        <div class="container">
-            <p class="footer-text">
-                © 2025 Shiv Dutt Choubey. All rights reserved.
-            </p>
-        </div>
-    </footer>
+    <footer id="site-footer"></footer>
+
+    <script src="header-footer.js"></script>
 
     <script>
         // 1. PLACE YOUR PORTFOLIO WEB APP EXECUTION URL HERE

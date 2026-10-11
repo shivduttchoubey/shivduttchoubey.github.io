@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certifications</title>
+    <link rel="icon" href="Media/favicon.jpg">
+    <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Certifications | Shiv Dutt Choubey</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
     <style>
         /* CSS RESET */
@@ -315,76 +318,121 @@
 </head>
 <body>
      <!-- Header Section -->
-     <header id="about">
-        <nav id="navbar" class="glass-nav">
-            <ul>
-                <li><a href="about.html" target="_blank">About</a></li>
-                <li><a href="projects_academics.html" target="_blank">Projects</a></li>
-                <li><a href="certifications.html" target="_blank">Certifications</a></li>
-                <li><a href="research.html" target="_blank">Research</a></li>
-                <li><a href="future_prospects.html" target="_blank">Future Prospects</a></li>
-                <li><a href="https://shivduttchoubey.substack.com/" target="_blank">My Newsletter</a></li>
-                <li><a href="https://shivduttchoubey.github.io\landing_page.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+     <header id="site-header"></header>
 
-    <div class="page-title">
+    <div class="page-title" style="margin-top: 100px;">
         <h1>Certifications</h1>
-        <p>Highlighting milestones of professional growth and achievements.</p>
+        <p>Highlighting national accreditations, digital forensics qualifications, and technical milestones.</p>
     </div>
 
     <div class="container">
         <!-- Certificate cards will be dynamically inserted here -->
     </div>
 
-    <div class="contact-form">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScrqB4kosfVgKycoU1eoAXE-DakOzxaKfjcw2yrXBgQH0U51A/viewform?embedded=true">
-            Loading...
-        </iframe>
-    </div>
-
     <script>
         const certifications = [
+            // 1. FACT 2026 - National Digital Forensics Accreditation
             {
-                title: "An Introduction to Programming Through C++",
-                image: "Media/Certificates/1 An Introduction to Programming Through C++.jpg",
-                orgLogo: "Media/Certificates/nptel_logo.png",
-                instructors: ["Prof. Abhiram G Ranade"],
-                institute: "IIT Bombay",
-                instituteLogo: "Media/Certificates/iitb.png",
-                skills: ["C++", "Programming", "Data Structures"],
-                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS42S4356031702192937"
+                title: "Forensic Aptitude and Caliber Test (FACT) 2026 - Digital Forensics",
+                image: "Media/Certificates/6 Ethical Hacking.jpg",
+                orgLogo: "Media/favicon.jpg",
+                instructors: ["National Forensic Sciences Board"],
+                institute: "NFSU / Ministry of Home Affairs",
+                instituteLogo: "Media/favicon.jpg",
+                skills: ["Digital Forensics", "Disk Image Reconstruction", "Memory Analysis", "Anti-Forensics", "Chain of Custody"],
+                certificateLink: "https://nfsu.ac.in/"
             },
 
+            // 2. Fortinet NSE 3
             {
-                title: "Introduction To Operating Systems",
+                title: "Fortinet Certified Associate — NSE 3",
                 image: "Media/Certificates/2 Introduction to Operating Systems.jpg",
+                orgLogo: "Media/favicon.jpg",
+                instructors: ["Fortinet NSE Training Institute"],
+                institute: "Fortinet NSE Training Institute",
+                instituteLogo: "Media/favicon.jpg",
+                skills: ["Network Security Architecture", "Fortinet Security Fabric", "Threat Intelligence", "IDPS"],
+                certificateLink: "https://www.fortinet.com/nse-training"
+            },
+
+            // 3. Fortinet NSE 1 & 2
+            {
+                title: "Fortinet Certified Fundamentals — NSE 1 & 2",
+                image: "Media/Certificates/10 Introduction To Internet Of Things.jpg",
+                orgLogo: "Media/favicon.jpg",
+                instructors: ["Fortinet NSE Training Institute"],
+                institute: "Fortinet NSE Training Institute",
+                instituteLogo: "Media/favicon.jpg",
+                skills: ["Cyber Threat Landscape", "Cloud Security Basics", "Information Security Fundamentals"],
+                certificateLink: "https://www.fortinet.com/nse-training"
+            },
+
+            // 4. Ethical Hacking (IIT Kharagpur)
+            {
+                title: "Ethical Hacking",
+                image: "Media/Certificates/6 Ethical Hacking.jpg",
                 orgLogo: "Media/Certificates/nptel_logo.png",
-                instructors: ["Prof. Chester Rebeiro"],
+                instructors: ["Prof. Indranil Sengupta"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["TCP/IP Security", "Secure Coding", "Cryptography", "Malware Analysis", "Web Security"],
+                certificateLink: "https://internalapp.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS44S6378035904272119"
+            },
+
+            // 5. Applied Artificial Intelligence (IIT Madras)
+            {
+                title: "Applied Artificial Intelligence",
+                image: "Media/Certificates/9 Applied Accelerated Artificial Intelligence.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: [
+                    "Prof. Satyadhyan Chickerur", 
+                    "Prof. Bharatkumar Sharma", 
+                    "Prof. Adesuyi Tosin", 
+                    "Prof. Satyajit Das"
+                ],
                 institute: "IIT Madras",
                 instituteLogo: "Media/Certificates/iitm.png",
-                skills: ["GCP", "Cloud Infrastructure", "DevOps"],
-                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS78S1430007709030295"
+                skills: ["PyTorch", "TensorFlow", "NLP Pipelines", "LLMs", "Distributed Deep Learning"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS104S63770073720374789"
             },
 
+            // 6. Introduction to Internet of Things (IIT Kharagpur)
+            {
+                title: "Introduction to Internet of Things",
+                image: "Media/Certificates/10 Introduction To Internet Of Things.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Sudip Misra"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["IoT Protocols", "Edge Computing", "Sensor Networks", "Embedded Devices"],
+                certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL24CS35S65770046230718626"
+            },
 
-                {
-                    title: "Data Base Management System",
-                    image: "Media/Certificates/3 Data Base Management System.jpg",
-                    orgLogo: "Media/Certificates/nptel_logo.png",
-                    instructors: [
-                        "Prof. Partha Pratim Das", 
-                        "Prof. Samiran Chattopadhyay", 
-                        "Prof. Kausik Datta"
-                    ],
-                    institute: "IIT Kharagpur",
-                    instituteLogo: "Media/Certificates/iitkgp.png",
-                    skills: ["Azure", "Cloud Development", ".NET"],
-                    certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS91S4364024910022470"
-                },
-,
+            // 7. Introduction to Industry 4.0 & IIoT (IIT Kharagpur)
+            {
+                title: "Introduction to Industry 4.0 and Industrial IoT",
+                image: "Media/Certificates/12 Introduction to Industry 4.0 and Industrial Internet of Things.png",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Sudip Misra"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["IIoT Architecture", "Cyber-Physical Systems", "Industrial Automation", "SCADA Security"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS95S36470004704300750"
+            },
 
+            // 8. Programming in Modern C++ (IIT Kharagpur)
+            {
+                title: "Programming in Modern C++",
+                image: "Media/Certificates/4 Programming in Modern C++.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Partha Pratim Das"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["Modern C++", "Memory Management", "STL", "OOP", "Debugging"],
+                certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS103S3364012810022470"
+            },
+
+            // 9. Programming in Java (IIT Kharagpur)
             {                
                 title: "Programming in Java",
                 image: "Media/Certificates/3 Programming In Java.jpg",
@@ -392,45 +440,75 @@
                 instructors: ["Prof. Debasis Samanta"],
                 institute: "IIT Kharagpur",
                 instituteLogo: "Media/Certificates/iitkgp.png",
-                skills: ["Azure", "Cloud Development", ".NET"],
+                skills: ["Java", "OOP", "Agile Application Development", "Multithreading"],
                 certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS102S6364027210022470"
             },
 
+            // 10. Data Base Management System (IIT Kharagpur)
             {
-            title: "Programming in Modern C++",
-            image: "Media/Certificates/4 Programming in Modern C++.jpg",
-            orgLogo: "Media/Certificates/nptel_logo.png",
-            instructors: ["Prof. Partha Pratim Das"],
-            institute: "IIT Kharagpur",
-            instituteLogo: "Media/Certificates/iitkgp.png",
-            skills: ["Azure", "Cloud Development", ".NET"],
-            certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS103S3364012810022470"
-            },
-, 
-
-                {
-                    title: "Roadmap for Patent Creation",
-                    image: "Media/Certificates/5 Roadmap for patent creation.jpg",
-                    orgLogo: "Media/Certificates/nptel_logo.png",
-                    instructors: ["Prof. Gouri Gargate"],
-                    institute: "IIT Kharagpur",
-                    instituteLogo: "Media/Certificates/iitkgp.png",
-                    skills: ["Azure", "Cloud Development", ".NET"],
-                    certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23GE22S4475022603112307"
-                },
-
-                {
-                title: "Ethical Hacking",
-                image: "Media/Certificates/6 Ethical Hacking.jpg",
+                title: "Data Base Management System",
+                image: "Media/Certificates/3 Data Base Management System.jpg",
                 orgLogo: "Media/Certificates/nptel_logo.png",
-                instructors: ["Prof. Indranil Sengupta"],
+                instructors: [
+                    "Prof. Partha Pratim Das", 
+                    "Prof. Samiran Chattopadhyay", 
+                    "Prof. Kausik Datta"
+                ],
                 institute: "IIT Kharagpur",
                 instituteLogo: "Media/Certificates/iitkgp.png",
-                skills: ["Azure", "Cloud Development", ".NET"],
-                certificateLink: "https://internalapp.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS44S6378035904272119"
+                skills: ["SQL", "NoSQL", "Data Modelling", "Relational Algebra", "Query Optimization"],
+                certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL22CS91S4364024910022470"
             },
-,
 
+            // 11. Introduction to Operating Systems (IIT Madras)
+            {
+                title: "Introduction To Operating Systems",
+                image: "Media/Certificates/2 Introduction to Operating Systems.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Chester Rebeiro"],
+                institute: "IIT Madras",
+                instituteLogo: "Media/Certificates/iitm.png",
+                skills: ["Linux Internals", "Kernel Architecture", "Process Scheduling", "System Administration"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS78S1430007709030295"
+            },
+
+            // 12. Programming Through C++ (IIT Bombay)
+            {
+                title: "An Introduction to Programming Through C++",
+                image: "Media/Certificates/1 An Introduction to Programming Through C++.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Abhiram G Ranade"],
+                institute: "IIT Bombay",
+                instituteLogo: "Media/Certificates/iitb.png",
+                skills: ["C++", "Algorithms", "Data Structures", "Problem Solving"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL22CS42S4356031702192937"
+            },
+
+            // 13. Roadmap for Patent Creation (IIT Kharagpur)
+            {
+                title: "Roadmap for Patent Creation",
+                image: "Media/Certificates/5 Roadmap for patent creation.jpg",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Gouri Gargate"],
+                institute: "IIT Kharagpur",
+                instituteLogo: "Media/Certificates/iitkgp.png",
+                skills: ["Patent Drafting", "Prior-Art Analysis", "Patentability Requirements", "IP Strategy"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23GE22S4475022603112307"
+            },
+
+            // 14. Intellectual Property Portfolio Management (IIT Roorkee)
+            {
+                title: "Intellectual Property Portfolio Management",
+                image: "Media/Certificates/11 Intellectual Property Portfolio Management.png",
+                orgLogo: "Media/Certificates/nptel_logo.png",
+                instructors: ["Prof. Rajat Agrawal"],
+                institute: "IIT Roorkee",
+                instituteLogo: "Media/Certificates/iitr.png",
+                skills: ["IP Management", "Portfolio Valuation", "Patent Commercialization"],
+                certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24GE62S56470002404300750"
+            },
+
+            // 15. Computer Graphics (IIT Guwahati)
             {
                 title: "Computer Graphics",
                 image: "Media/Certificates/7 Computer Graphics.jpg",
@@ -438,10 +516,11 @@
                 instructors: ["Prof. Samit Bhattacharya"],
                 institute: "IIT Guwahati",
                 instituteLogo: "Media/Certificates/iitg.png",
-                skills: ["Azure", "Cloud Development", ".NET"],
+                skills: ["OpenGL", "Graphics Pipeline", "Shader Programming", "3D Transformations"],
                 certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL23CS115S4490006510115664"
             },
 
+            // 16. Corporate Finance (IIT Kharagpur)
             {
                 title: "Corporate Finance",
                 image: "Media/Certificates/8 Corporate Finance.jpg",
@@ -449,66 +528,9 @@
                 instructors: ["Prof. Abhijeet Chandra"],
                 institute: "IIT Kharagpur",
                 instituteLogo: "Media/Certificates/iitkgp.png",
-                skills: ["Azure", "Cloud Development", ".NET"],
+                skills: ["Capital Budgeting", "Firm Valuation", "Risk & Return Analysis"],
                 certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL23MG92S3490019110115664"
-            },
-
-            {
-            title: "Applied Artificial Intelligence",
-            image: "Media/Certificates/9 Applied Accelerated Artificial Intelligence.jpg",
-            orgLogo: "Media/Certificates/nptel_logo.png",
-            instructors: [
-                "Prof. Satyadhyan Chickerur", 
-                "Prof. Bharatkumar Sharma", 
-                "Prof. Adesuyi Tosin", 
-                "Prof. Satyajit Das"
-            ],
-            institute: "IIT Madras",
-            instituteLogo: "Media/Certificates/iitm.png",
-            skills: ["Azure", "Cloud Development", ".NET"],
-            certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS104S63770073720374789"
-        },
-
-
-        {
-            title: "Introduction to Internet of Things",
-            image: "Media/Certificates/10 Introduction To Internet Of Things.jpg",
-            orgLogo: "Media/Certificates/nptel_logo.png",
-            instructors: ["Prof. Sudip Misra"],
-            institute: "IIT Kharagpur",
-            instituteLogo: "Media/Certificates/iitkgp.png",
-            skills: ["Azure", "Cloud Development", ".NET"],
-            certificateLink: "https://nptel.ac.in/noc/E_Certificate/NPTEL24CS35S65770046230718626"
-        },
-
-        {
-            title: "Intellectual Property Portfolio Management",
-            image: "Media/Certificates/11 Intellectual Property Portfolio Management.png",
-            orgLogo: "Media/Certificates/nptel_logo.png",
-            instructors: ["Prof. Rajat Agrawal"],
-            institute: "IIT Roorkee",
-            instituteLogo: "Media/Certificates/iitr.png",
-            skills: ["Azure", "Cloud Development", ".NET"],
-            certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24GE62S56470002404300750"
-        },
-
-        {
-            title: "Introduction to Industrial Internet of Things 4.0",
-            image: "Media/Certificates/12 Introduction to Industry 4.0 and Industrial Internet of Things.png",
-            orgLogo: "Media/Certificates/nptel_logo.png",
-            instructors: ["Prof. Sudip Misra"],
-            institute: "IIT Kharagpur",
-            instituteLogo: "Media/Certificates/iitkgp.png",
-            skills: ["Azure", "Cloud Development", ".NET"],
-            certificateLink: "https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS95S36470004704300750"
-        },
-
-
-
-
-
-
-            // Add all other certificates following the same structure
+            }
         ];
 
         const createCertificationCard = (cert) => {
@@ -518,12 +540,12 @@
                     <div class="card-content">
                         <img src="${cert.image}" alt="${cert.title}">
                         <div class="cert-header">
-                            <img src="${cert.orgLogo}" alt="NPTEL Logo">
+                            <img src="${cert.orgLogo}" alt="Logo">
                             <span class="cert-title">${cert.title}</span>
                         </div>
                         <div class="instructor-info">
                             <div class="instructor-name">
-                                Instructor${cert.instructors.length > 1 ? 's' : ''}:
+                                ${cert.instructors.length > 1 ? 'Instructors:' : 'Issuing Body / Instructor:'}
                                 <ul>
                                     ${cert.instructors.map(instructor => `<li>${instructor}</li>`).join('')}
                                 </ul>
@@ -536,7 +558,7 @@
                         <div class="skills">
                             ${cert.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
                         </div>
-                        <a href="${cert.certificateLink}" class="cert-link" target="blank">
+                        <a href="${cert.certificateLink}" class="cert-link" target="_blank" rel="noopener noreferrer">
                             View Certificate
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -559,8 +581,8 @@
             <article>
                 <div class="glows"></div>
                 <div class="card-content" style="text-align: center; padding: 2rem;">
-                    <h3 class="cert-title">More Certifications Coming Soon</h3>
-                    <p style="margin-top: 1rem; opacity: 0.7;">Stay tuned for upcoming achievements!</p>
+                    <h3 class="cert-title">More Certifications in Progress</h3>
+                    <p style="margin-top: 1rem; opacity: 0.7;">Currently pursuing advanced certifications in Post-Quantum Cryptography &amp; Cloud Security Architecture.</p>
                 </div>
             </article>
         `;
@@ -604,5 +626,9 @@
 
         document.body.addEventListener('pointermove', UPDATE);
     </script>
+
+    <footer id="site-footer"></footer>
+
+    <script src="header-footer.js"></script>
 </body>
 </html>

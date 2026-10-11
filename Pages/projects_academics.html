@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="Pages\Media\favicon.jpg">
+    <link rel="icon" href="Media/favicon.jpg">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <title>Projects and Academic Work</title>
+    <title>Projects &amp; Academic Work | Shiv Dutt Choubey</title>
     <style>
       /* VARIABLES */
       :root {
@@ -208,76 +209,241 @@
 </head>
 <body>
     <!-- Header Section -->
-    <header id="about">
-        <nav id="navbar" class="glass-nav">
-            <ul>
-                <li><a href="about.html" target="_blank">About</a></li>
-                <li><a href="projects_academics.html" target="_blank">Projects</a></li>
-                <li><a href="certifications.html" target="_blank">Certifications</a></li>
-                <li><a href="research.html" target="_blank">Research</a></li>
-                <li><a href="future_prospects.html" target="_blank">Future Prospects</a></li>
-                <li><a href="https://shivduttchoubey.substack.com/" target="_blank">My Newsletter</a></li>
-                <li><a href="https://shivduttchoubey.github.io\landing_page.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <hr>
-      </header>
+    <header id="site-header"></header>
 
-      <div class="container">
-        <u><h1 class="section-title">Projects</h1></u>
+    <div class="container" style="padding-top: 80px;">
+        <h1 class="section-title">Projects &amp; Technical Portfolio</h1>
+        <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: -1rem auto 2.5rem;">
+            A showcase of systems engineering, post-quantum cryptography research, network defense architectures, and privacy-preserving prototypes.
+        </p>
+
         <div class="projects">
-            <!-- Project 1 -->
+            <!-- Project 1: QuantumPosture -->
             <div class="project-card">
-                <h2 class="project-title">Banking_Learner_Simulation</h2>
-                <p class="project-description">This is a simulation where people can learn and expreience all the banking principles of the contemporary world and know more about the asset classes which are used in the financial sytem of the digital world.</p>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">QuantumPosture</h2>
+                    <span style="background: rgba(100, 255, 218, 0.15); color: #64ffda; border: 1px solid rgba(100, 255, 218, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">Cloud &bull; PQC</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Harvest-Now-Decrypt-Later (HNDL) Risk Scoring for Cloud Storage</h3>
+                <p class="project-description">
+                    Developed a Cloud Security Posture Management (CSPM) extension that systematically scores cloud object storage buckets for exposure to Harvest-Now-Decrypt-Later (HNDL) quantum attacks. Evaluates encryption algorithms, data sensitivity classifications, TLS cipher posture, and retention timelines to compute an actionable 0-100 risk score. Built as a unified Python CLI scanner with a Flask web dashboard.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">Flask</span>
+                    <span class="skill-pill">CSPM</span>
+                    <span class="skill-pill">HNDL Risk Scoring</span>
+                    <span class="skill-pill">Cloud Security</span>
+                </div>
                 <div class="project-links">
-                    <a href="https://github.com/shivduttchoubey/Banking_Learner_Simulation" target="blank">GitHub</a>
-                    <a href="https://example.com/project1" target="blank">Hosted at</a>
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="research.html"><i class="fas fa-file-alt"></i> Research Details</a>
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Project 2: ERIV -->
             <div class="project-card">
-                <h2 class="project-title">Profanity-Filter-API</h2>
-                <p class="project-description">This is a Profanity Filter API built using Python Programming Language. It is easily integratable to any workflow including chat systems and other services which require filtering of data flowing through the channels.</p>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">ERIV</h2>
+                    <span style="background: rgba(167, 139, 250, 0.15); color: #a78bfa; border: 1px solid rgba(167, 139, 250, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">Cryptography</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Post-Decryption Semantic Protection Layer Against HNDL</h3>
+                <p class="project-description">
+                    Engineered a novel semantic security barrier designed to safeguard sensitive data even after decryption. Targets the emerging threat model where adversaries store intercepted ciphertext today with plans to decrypt it in the future once cryptanalytically relevant quantum computers (CRQCs) become viable.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">Post-Quantum Cryptography</span>
+                    <span class="skill-pill">Semantic Encryption</span>
+                    <span class="skill-pill">HNDL Mitigation</span>
+                    <span class="skill-pill">Information Theory</span>
+                </div>
                 <div class="project-links">
-                    <a href="https://github.com/example/project2" target="blank">GitHub</a>
-                    <a href="https://example.com/project2" target="blank">Hosted at</a>
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="research.html"><i class="fas fa-microscope"></i> Architecture</a>
                 </div>
             </div>
 
-            <!-- Add more projects as needed -->
+            <!-- Project 3: Netflow Monitor -->
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">Netflow Monitor</h2>
+                    <span style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">IDPS &bull; Defense</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Low-Cost Intrusion Detection &amp; Prevention System for SMBs</h3>
+                <p class="project-description">
+                    Architected a lightweight, easily deployable network flow IDPS specifically tailored for resource-constrained small and medium businesses. Implements low-overhead anomaly detection algorithms capable of identifying malicious traffic spikes, port scans, and unauthorized tunneling while maintaining exceptionally low false-positive rates.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">Network Flow Analysis</span>
+                    <span class="skill-pill">IDPS</span>
+                    <span class="skill-pill">Anomaly Detection</span>
+                    <span class="skill-pill">Packet Filtering</span>
+                    <span class="skill-pill">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fas fa-shield-alt"></i> Documentation</a>
+                </div>
+            </div>
+
+            <!-- Project 4: LoRa ImageSum -->
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">LoRa ImageSum</h2>
+                    <span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">IoT &bull; Wireless</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Secure Image Transmission over LoRa Radio Protocol</h3>
+                <p class="project-description">
+                    Formulated a novel transmission protocol to transfer compressed images securely over the extreme bandwidth limitations of LoRa (Long Range) low-power radio networks. Integrates cryptographic checksums and packet fragmentation integrity checks to guarantee bit-level image veracity across noisy, lossy wireless channels.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">LoRaWAN</span>
+                    <span class="skill-pill">Wireless Security</span>
+                    <span class="skill-pill">Cryptographic Checksums</span>
+                    <span class="skill-pill">Embedded C++</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fas fa-broadcast-tower"></i> Specs</a>
+                </div>
+            </div>
+
+            <!-- Project 5: NLP-AST Compiler Security -->
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">NLP-AST Compiler Security</h2>
+                    <span style="background: rgba(244, 63, 94, 0.15); color: #f43f5e; border: 1px solid rgba(244, 63, 94, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">Compiler &bull; AI</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Pre-Compilation Source Code Tampering Detection</h3>
+                <p class="project-description">
+                    Pioneered a defensive mechanism combining Abstract Syntax Tree (AST) parsing with Natural Language Processing pipelines to scrutinize source code prior to compilation. Detects subtle malicious insertions, backdoors, and supply-chain code tampering before executable generation.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">AST Analysis</span>
+                    <span class="skill-pill">NLP</span>
+                    <span class="skill-pill">Compiler Security</span>
+                    <span class="skill-pill">Supply-Chain Security</span>
+                    <span class="skill-pill">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="research.html"><i class="fas fa-code-branch"></i> Details</a>
+                </div>
+            </div>
+
+            <!-- Project 6: Keyword Detection API -->
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">Keyword Detection API</h2>
+                    <span style="background: rgba(234, 179, 8, 0.15); color: #eab308; border: 1px solid rgba(234, 179, 8, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">API &bull; Moderation</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">High-Throughput Threat Intelligence &amp; Filtering REST API</h3>
+                <p class="project-description">
+                    Engineered and deployed a scalable RESTful API designed to detect, classify, and flag specific sensitive keywords, profanity, and threat markers in incoming data streams. Designed for high throughput with easy integration into live chat applications, content moderation systems, and SOC threat feeds.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">FastAPI / Flask</span>
+                    <span class="skill-pill">RESTful API</span>
+                    <span class="skill-pill">Content Moderation</span>
+                    <span class="skill-pill">Threat Intelligence</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fas fa-plug"></i> Endpoint Docs</a>
+                </div>
+            </div>
+
+            <!-- Project 7: LiveMedQR -->
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">LiveMedQR</h2>
+                    <span style="background: rgba(100, 255, 218, 0.15); color: #64ffda; border: 1px solid rgba(100, 255, 218, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">Hardware &bull; Healthcare</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Secure Medical Unit Data Transmission Hardware</h3>
+                <p class="project-description">
+                    Engineered a physical hardware adapter attachable to clinical diagnostic units. Wirelessly and securely transmits encrypted patient diagnostic telemetry over Wi-Fi directly to the patient's personal smartphone to formulate accurate Electronic Healthcare Records (EHR), eliminating manual data entry mistakes by hospital staff.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">IoT Hardware</span>
+                    <span class="skill-pill">Healthcare Security</span>
+                    <span class="skill-pill">Wi-Fi Encryption</span>
+                    <span class="skill-pill">EHR Systems</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/shivduttchoubey" target="_blank" rel="noopener noreferrer"><i class="fas fa-laptop-medical"></i> Overview</a>
+                </div>
+            </div>
+
+            <!-- Project 8: Banking Learner Simulation -->
+            <div class="project-card">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                    <h2 class="project-title" style="margin-bottom: 0;">Banking Learner Simulation</h2>
+                    <span style="background: rgba(147, 51, 234, 0.15); color: #c084fc; border: 1px solid rgba(147, 51, 234, 0.3); font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 12px; text-transform: uppercase;">Finance &bull; Sim</span>
+                </div>
+                <h3 style="font-size: 1rem; color: #a78bfa; margin-bottom: 0.8rem; font-weight: 600;">Contemporary Banking Principles &amp; Asset Classes Platform</h3>
+                <p class="project-description">
+                    Built a comprehensive interactive financial simulation platform where students and professionals can experiment with contemporary banking mechanics, ledger balancing, capital adequacy, risk reserves, and digital financial asset classes used across modern monetary ecosystems.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.2rem;">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">Financial Simulation</span>
+                    <span class="skill-pill">Asset Management</span>
+                    <span class="skill-pill">Full Stack</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/shivduttchoubey/Banking_Learner_Simulation" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://github.com/shivduttchoubey/Banking_Learner_Simulation" target="_blank" rel="noopener noreferrer"><i class="fas fa-play"></i> Simulation Demo</a>
+                </div>
+            </div>
         </div>
 
-        <div class="academic-work">
-            <u><h1 class="section-title">Academic Work</h1></u>
+        <!-- Academic Work Section (No underlines on heading) -->
+        <div class="academic-work" style="margin-top: 5rem;">
+            <h1 class="section-title">Academic &amp; Sponsored Research</h1>
+            <p style="text-align: center; color: #94a3b8; max-width: 800px; margin: -1rem auto 3rem;">
+                Formal research programs and advanced scholarly investigations conducted with premier academic institutions.
+            </p>
+
             <div class="timeline">
-                <!-- Timeline Entry 1 -->
+                <!-- Academic Entry 1: IIT Kharagpur Pre-Doctoral Fellowship -->
                 <div class="timeline-entry">
-                    <h2 class="timeline-title">Securing and Decentralising Communication over Peers Using Blockchain and TCP UDP Hole Punching</h2>
-                    <p class="timeline-description"><ol><li>Details about the academic project,</li>
-                      <li> Securing Communication between individuals.</li>
-                      <li> A mechanism which allows individuals to connect over internet without external services.</li>
-                     </ol></p>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                        <h2 class="timeline-title" style="color: #64ffda;">Design &amp; Development of Future Quantum Internet Architecture and Post-Quantum Modern Networking</h2>
+                        <span style="color: #a78bfa; font-size: 0.85rem; font-weight: 700; background: rgba(167, 139, 250, 0.1); padding: 0.2rem 0.6rem; border-radius: 10px;">IIT Kharagpur &bull; 2024–2025</span>
+                    </div>
+                    <p style="color: #cbd5e1; margin-top: 0.5rem; font-size: 0.95rem;">
+                        Sponsored Pre-Doctoral Fellowship research investigating quantum entanglement distribution, quantum repeater interfaces, and quantum-resistant cryptographic algorithms to secure next-generation critical infrastructure. Conducted extensive modeling of Industrial IoT communication protocols and delivered formal technical reports.
+                    </p>
                 </div>
 
-                <!-- Timeline Entry 2 -->
+                <!-- Academic Entry 2: P2P Blockchain & Hole Punching -->
                 <div class="timeline-entry">
-                    <h2 class="timeline-title">Software Development Environment Protection through Abstract Syntax Tree(AST)
-                        and Natural Language Processing(NLP) for Python Programming Language</h2>
-                    <p class="timeline-description"><ol><li>Details about the academic project,</li>
-                      <li> its objectives,</li>
-                      <li> and outcomes.</li>
-                     </ol></p>
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                        <h2 class="timeline-title" style="color: #64ffda;">Securing and Decentralising Communication over Peers Using Blockchain and TCP/UDP Hole Punching</h2>
+                        <span style="color: #a78bfa; font-size: 0.85rem; font-weight: 700; background: rgba(167, 139, 250, 0.1); padding: 0.2rem 0.6rem; border-radius: 10px;">Academic Research</span>
+                    </div>
+                    <p style="color: #cbd5e1; margin-top: 0.5rem; font-size: 0.95rem;">
+                        Architected a direct peer-to-peer secure communication mechanism eliminating untrusted third-party relays through automated NAT hole punching (STUN/TURN alternatives) governed by distributed cryptographic ledgers to verify peer identities and session parameters.
+                    </p>
                 </div>
 
-                <!-- Add more entries as needed -->
+                <!-- Academic Entry 3: Software Development Environment Protection -->
+                <div class="timeline-entry">
+                    <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
+                        <h2 class="timeline-title" style="color: #64ffda;">Software Development Environment Protection through Abstract Syntax Tree (AST) &amp; Natural Language Processing (NLP)</h2>
+                        <span style="color: #a78bfa; font-size: 0.85rem; font-weight: 700; background: rgba(167, 139, 250, 0.1); padding: 0.2rem 0.6rem; border-radius: 10px;">Academic Research</span>
+                    </div>
+                    <p style="color: #cbd5e1; margin-top: 0.5rem; font-size: 0.95rem;">
+                        Conducted research into automated verification of developer IDE environments. Leveraged Python AST graph representations coupled with semantic embedding vectors to pinpoint anomalous code modifications, dependency hijacking, and unauthorized privileged API calls.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
-     
 
+    <footer id="site-footer"></footer>
 
-
+    <script src="header-footer.js"></script>
 </body>
 </html>

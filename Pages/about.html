@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="Pages\Media\favicon.jpg">
-    <title>About Me</title>
+    <link rel="icon" href="Media/favicon.jpg">
+    <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Shiv Dutt Choubey | About Me</title>
     <style>
         /* Reset and base styles */
         * {
@@ -13,56 +15,21 @@
             box-sizing: border-box;
         }
 
-        hr
-        {
-          background-color: #ccc;
+        hr {
+            border: 0;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.15);
+            margin: 30px 0;
         }
 
         body {
-          background: #050404;
-            font-family: Arial, sans-serif;
+            background: #09090d;
+            font-family: 'Raleway', sans-serif;
             line-height: 1.6;
-            padding: 15px;
+            padding: 90px 15px 40px;
             max-width: 100%;
             overflow-x: hidden;
-        }
-
-        /* Navigation styles */
-        #navbar {
-            width: 100%;
-            padding: 10px;
-            overflow-x: auto;
-        }
-
-        #navbar ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            /* gap: 20px; */
-            flex-wrap: wrap;
-            /* padding: 10px; */
-
-        }
-
-        #navbar a {
-            text-decoration: none;
-            color: #f6f0f0;
-            padding: 8px 12px;
-            white-space: nowrap;
-            font-size: clamp(20px, 2vw, 16px);
-            border-left: 6px solid green;
-            border-right: 6px solid green;
-            height: flex-grow;
-            
-            
-        }
-
-        #navbar a:hover {
-            color: #0066cc;
-            background: #f0f0f0;
-            border-radius: 4px;
-            line-break: auto;
-
+            color: #ffffff;
         }
 
         /* Container styles */
@@ -259,62 +226,304 @@
 
 </head>
 <body>
-    <header id="about">
-        <nav id="navbar">
-            <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects_academics.html">Projects</a></li>
-                <li><a href="certifications.html">Certifications</a></li>
-                <li><a href="research.html">Research</a></li>
-                <li><a href="future_prospects.html">Future Prospects</a></li>
-                <li><a href="https://shivduttchoubey.substack.com/">My Newsletter</a></li>
-                <li><a href="https://shivduttchoubey.github.io\landing_page.html#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <hr>
-    </header>
+    <header id="site-header"></header>
 
     <div class="about-container">
+        <!-- Profile Section -->
         <div class="profile-section">
             <img src="Media/profile_img.jpg" alt="Shiv Dutt Choubey" class="profile-image">
             <div class="about-content">
                 <h2>About Me</h2>
-                <p>Hello! I'm Shiv Dutt Choubey, a passionate technology enthusiast with a keen interest in innovative solutions and cutting-edge technologies. My journey in the tech world is driven by curiosity, creativity, and a constant desire to learn and grow.</p>
-                <p>As a dedicated professional, I combine technical expertise with problem-solving skills to create meaningful and impactful solutions. My background encompasses a wide range of technological domains, allowing me to approach challenges with a holistic and innovative mindset.</p>
+                <p>Hello! I'm <strong>Shiv Dutt Choubey</strong>, a Cybersecurity graduate candidate pursuing an M.Sc. in Cyber Security at the premier <strong>National Forensic Sciences University (NFSU), Gandhinagar</strong> (Current SPI: 9.05), and a former <strong>NPTEL Pre-Doctoral Fellow at the Indian Institute of Technology Kharagpur (IIT-KGP)</strong>.</p>
+                <p>My core research and engineering focus lies at the intersection of <strong>Post-Quantum Cryptography (PQC)</strong>, <strong>Quantum Internet Architecture</strong>, and <strong>AI-driven Network Intrusion Detection &amp; Prevention Systems (IDPS)</strong>. I investigate defensive measures against emerging Harvest-Now-Decrypt-Later (HNDL) quantum threats, developing semantic post-decryption security layers (ERIV) and risk-scoring engines for cloud storage (QuantumPosture).</p>
+                <p>With an academic foundation in Computer Science (B.Sc., 80%), I combine mathematical cryptographic foundations with rigorous systems programming in Modern C++, Python, and Linux internals. I have practical experience designing conversational AI data pipelines at Doions Pvt. Ltd. and researching software patent landscapes at RGSOIPL, IIT Kharagpur.</p>
+                <p>Beyond technical systems, I am deeply knowledgeable in global regulatory and data privacy frameworks, including India's <strong>Digital Personal Data Protection (DPDP) Act</strong>, the <strong>GDPR</strong>, and the <strong>EU AI Act</strong>. I implement enterprise security controls aligned with <strong>NIST CSF</strong>, <strong>ISO/IEC 27001</strong>, and <strong>ISO/IEC 42001</strong>, dedicated to engineering resilient, tamper-proof systems for critical infrastructure.</p>
             </div>
         </div>
 
-        <div class="skills-section">
-            <h2>Professional Skills</h2>
-            <ul class="skills-grid">
-                <li>Machine Learning</li>
-                <li>Full Stack Web Development</li>
-                <li>Android App Development</li>
-                <li>Cloud Computing</li>
-                <li>Natural Language Processing</li>
-                <li>Data Visualization</li>
-                <li>Cyber Security</li>
-                <li>Penetration Testing</li>
-            </ul>
-        </div>
-
-        <div class="education-section">
-            <h2>Education</h2>
-            <p>Currently pursuing my academic journey with a focus on technology and innovation. My educational background provides a strong foundation in technical skills and computational thinking.</p>
-        </div>
         <hr>
 
-        <div class="interests-section">
-            <h2>Interests & Passions</h2>
-            <p>Beyond technology, I'm passionate about continuous learning, exploring emerging tech trends, and finding innovative solutions to complex problems. I believe in the power of technology to create positive change and improve lives.</p>
+        <!-- What Am I Doing / Timeline Section -->
+        <div class="timeline-section">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;"><i class="fas fa-route" style="color: #64ffda;"></i> My Journey &amp; What I Am Doing</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 700px; margin: 0 auto 2rem;">A visual timeline chart tracing my active research, fellowships, professional development, and community impact.</p>
+            
+            <div class="timeline-track">
+                <!-- Node 1: NFSU (Current) -->
+                <div class="timeline-node active">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">July 2024 – Present (July 2027)</span>
+                            <span class="timeline-status">Active &bull; SPI: 9.05</span>
+                        </div>
+                        <h3>Master of Science in Cyber Security</h3>
+                        <div class="timeline-org">National Forensic Sciences University (NFSU), Gandhinagar, Gujarat</div>
+                        <p>Specializing in Post-Quantum Cryptography, Cloud Security, Forensic Disk Imaging, Enterprise Network Hardening, and Cyber Law. Maintaining a stellar SPI of 9.05 across advanced laboratory coursework.</p>
+                    </div>
+                </div>
+
+                <!-- Node 2: IIT Kharagpur Pre-Doctoral Fellow -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">August 2024 – July 2025</span>
+                            <span class="timeline-status completed">Completed &bull; 12 Months</span>
+                        </div>
+                        <h3>NPTEL Pre-Doctoral Research Fellow</h3>
+                        <div class="timeline-org">Indian Institute of Technology Kharagpur (IIT-KGP), West Bengal</div>
+                        <p>Conducted applied research under the sponsored project: <em>"Design and Development of Future Quantum Internet Architecture and Post-Quantum Modern Networking"</em>. Contributed to post-quantum cryptographic protocol design and investigated IIoT communication security frameworks.</p>
+                    </div>
+                </div>
+
+                <!-- Node 3: NPTEL Summer Research Intern -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">April 2024 – July 2024</span>
+                            <span class="timeline-status completed">Completed &bull; 4 Months</span>
+                        </div>
+                        <h3>NPTEL Summer Research Intern</h3>
+                        <div class="timeline-org">RGSOIPL, IIT Kharagpur &amp; K.L.E. Technological University</div>
+                        <p>Worked at the intersection of Intellectual Property Law and frontier tech; analyzed patent landscapes across emerging domains including AI and software development ecosystem security. Mastered prior-art analysis and IP documentation.</p>
+                    </div>
+                </div>
+
+                <!-- Node 4: Doions Software Developer Intern -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">November 2022 – March 2023</span>
+                            <span class="timeline-status completed">Completed &bull; 5 Months</span>
+                        </div>
+                        <h3>Software Developer Intern</h3>
+                        <div class="timeline-org">Doions Private Limited, Jabalpur, MP</div>
+                        <p>Designed and deployed an end-to-end Data Processing Pipeline for Conversational AI integrated into a production chatbot framework (Local Learn Chatbot). Contributed to Agile sprint cycles and backend REST APIs.</p>
+                    </div>
+                </div>
+
+                <!-- Node 5: B.Sc. Computer Science -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">July 2021 – July 2024</span>
+                            <span class="timeline-status completed">Graduated &bull; 80%</span>
+                        </div>
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <div class="timeline-org">Rani Durgawati Vishwavidyalaya (RDVV), Jabalpur, MP</div>
+                        <p>Built rigorous foundations in core computing: Object-Oriented Programming, Database Management Systems, Operating Systems, Networking, and Computational Mathematics.</p>
+                    </div>
+                </div>
+
+                <!-- Node 6: Volunteer Work & Leadership -->
+                <div class="timeline-node">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-meta">
+                            <span class="timeline-period">April 2020 – Present</span>
+                            <span class="timeline-status">Ongoing Leadership</span>
+                        </div>
+                        <h3>Cybersecurity Volunteer &amp; Community Educator</h3>
+                        <div class="timeline-org">WeSeSo (We Secure Society) &bull; NSS Volunteer &bull; NCC Army Wing</div>
+                        <p>Leads public awareness campaigns on digital hygiene, phishing prevention, and safe internet practices. Background in community welfare (NSS, 2021-2024) and structured military training (NCC Army Wing cadet, 2016-2018).</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <hr>
+
+        <!-- Professional Skills (Relatable side-by-side boxes) -->
+        <div class="skills-section">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;"><i class="fas fa-cubes" style="color: #64ffda;"></i> Professional Skills Matrix</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 700px; margin: 0 auto 2rem;">Domain-specific skill sets clustered by relatability and technical synergy.</p>
+            
+            <div class="relatable-skills-grid">
+                <!-- Relatable Box 1: Cyber Security & Defense -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Cyber Defense &amp; IDPS</h3>
+                    </div>
+                    <ul class="relatable-box-list">
+                        <li><i class="fas fa-chevron-right"></i> Network Security &amp; IDPS (Snort/Suricata)</li>
+                        <li><i class="fas fa-chevron-right"></i> Ethical Hacking &amp; Penetration Testing</li>
+                        <li><i class="fas fa-chevron-right"></i> MITRE ATT&amp;CK Threat Mapping</li>
+                        <li><i class="fas fa-chevron-right"></i> Netflow Anomaly Detection Algorithms</li>
+                        <li><i class="fas fa-chevron-right"></i> Web &amp; Mobile App Security (OWASP, MobSF)</li>
+                        <li><i class="fas fa-chevron-right"></i> Network Packet Analysis (Wireshark, Nmap)</li>
+                    </ul>
+                </div>
+
+                <!-- Relatable Box 2: Cryptography & Quantum -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-atom"></i>
+                        <h3>Quantum &amp; Cryptography</h3>
+                    </div>
+                    <ul class="relatable-box-list">
+                        <li><i class="fas fa-chevron-right"></i> Post-Quantum Cryptography Protocols</li>
+                        <li><i class="fas fa-chevron-right"></i> Quantum Internet Architecture</li>
+                        <li><i class="fas fa-chevron-right"></i> HNDL Threat Modeling &amp; Risk Scoring</li>
+                        <li><i class="fas fa-chevron-right"></i> Semantic Encryption &amp; Decryption Layers</li>
+                        <li><i class="fas fa-chevron-right"></i> TLS Configuration &amp; Posture Auditing</li>
+                        <li><i class="fas fa-chevron-right"></i> Cryptographic Checksums (LoRa ImageSum)</li>
+                    </ul>
+                </div>
+
+                <!-- Relatable Box 3: Systems, Cloud & IoT -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-server"></i>
+                        <h3>Systems, Cloud &amp; IIoT</h3>
+                    </div>
+                    <ul class="relatable-box-list">
+                        <li><i class="fas fa-chevron-right"></i> Python, Modern C++, Java, C, Kotlin</li>
+                        <li><i class="fas fa-chevron-right"></i> Linux OS Internals &amp; System Hardening</li>
+                        <li><i class="fas fa-chevron-right"></i> Industrial IoT (IIoT) &amp; Healthcare IoT</li>
+                        <li><i class="fas fa-chevron-right"></i> Cloud Security &amp; Containers (Docker, K8s)</li>
+                        <li><i class="fas fa-chevron-right"></i> 5G - RAN &amp; LoRa Low-Power Radio</li>
+                        <li><i class="fas fa-chevron-right"></i> Database Systems (SQL, PostgreSQL, MongoDB)</li>
+                    </ul>
+                </div>
+
+                <!-- Relatable Box 4: Forensics, AI & Privacy -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-fingerprint"></i>
+                        <h3>Forensics, AI &amp; Privacy</h3>
+                    </div>
+                    <ul class="relatable-box-list">
+                        <li><i class="fas fa-chevron-right"></i> Digital Forensics (FACT 2026, Autopsy, FTK)</li>
+                        <li><i class="fas fa-chevron-right"></i> Volatility Memory &amp; VeraCrypt Analysis</li>
+                        <li><i class="fas fa-chevron-right"></i> Secure Federated Learning &amp; AI Pipelines</li>
+                        <li><i class="fas fa-chevron-right"></i> AST Source Code Manipulation Detection</li>
+                        <li><i class="fas fa-chevron-right"></i> DPDP Act, GDPR &amp; EU AI Act Compliance</li>
+                        <li><i class="fas fa-chevron-right"></i> Patent Law, Prior Art &amp; IP Strategy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Education Section -->
+        <div class="education-section">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;"><i class="fas fa-graduation-cap" style="color: #64ffda;"></i> Academic Qualifications</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 700px; margin: 0 auto 2rem;">A distinguished academic record spanning digital forensics, computer science, and technical excellence.</p>
+            
+            <div class="relatable-skills-grid">
+                <!-- Education 1 -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-university"></i>
+                        <h3>M.Sc. in Cyber Security</h3>
+                    </div>
+                    <p style="color: #64ffda; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">National Forensic Sciences University (NFSU)</p>
+                    <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0.6rem;">Gandhinagar, Gujarat &bull; Pursuing (July 2024 – July 2027)</p>
+                    <div style="background: rgba(100, 255, 218, 0.1); border-left: 3px solid #64ffda; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.8rem;">
+                        <strong style="color: #64ffda;">Current Grade:</strong> SPI 9.05 (Semester 2)
+                    </div>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">Key Areas: Post-Quantum Cryptography, Enterprise Network Defense, Digital Forensics, Cloud Forensics, Malware Analysis, and Cyber Law.</p>
+                </div>
+
+                <!-- Education 2 -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-laptop-code"></i>
+                        <h3>B.Sc. in Computer Science</h3>
+                    </div>
+                    <p style="color: #64ffda; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Rani Durgawati Vishwavidyalaya (RDVV)</p>
+                    <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0.6rem;">Jabalpur, Madhya Pradesh &bull; Completed July 2024</p>
+                    <div style="background: rgba(167, 139, 250, 0.1); border-left: 3px solid #a78bfa; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.8rem;">
+                        <strong style="color: #a78bfa;">Final Score:</strong> 80% Aggregate
+                    </div>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">Key Areas: Data Structures &amp; Algorithms, Operating Systems, Database Management Systems, Object-Oriented Programming (Java/C++), and Computer Networks.</p>
+                </div>
+
+                <!-- Education 3 -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-school"></i>
+                        <h3>AISSCE (Class XII)</h3>
+                    </div>
+                    <p style="color: #64ffda; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Army Public School No. 1</p>
+                    <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0.6rem;">Jabalpur, Madhya Pradesh &bull; Completed July 2021</p>
+                    <div style="background: rgba(52, 211, 153, 0.1); border-left: 3px solid #34d399; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.8rem;">
+                        <strong style="color: #34d399;">Board:</strong> CBSE &bull; 91%
+                    </div>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">Stream: Physics, Chemistry, Mathematics &amp; Computer Science. Academic excellence with top standing in computational thinking and programming.</p>
+                </div>
+
+                <!-- Education 4 -->
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-award"></i>
+                        <h3>AISSE (Class X)</h3>
+                    </div>
+                    <p style="color: #64ffda; font-weight: 600; font-size: 0.9rem; margin-bottom: 0.4rem;">Army Public School No. 1</p>
+                    <p style="color: #cbd5e1; font-size: 0.88rem; margin-bottom: 0.6rem;">Jabalpur, Madhya Pradesh &bull; Completed July 2019</p>
+                    <div style="background: rgba(52, 211, 153, 0.1); border-left: 3px solid #34d399; padding: 0.5rem; border-radius: 4px; margin-bottom: 0.8rem;">
+                        <strong style="color: #34d399;">Board:</strong> CBSE &bull; 91.2%
+                    </div>
+                    <p style="font-size: 0.85rem; color: #94a3b8;">All-round academic and extracurricular distinction. Science olympiads, mathematics competitions, and student leadership.</p>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- Interests & Passions Section -->
+        <div class="interests-section">
+            <h2 style="text-align: center; margin-bottom: 0.5rem;"><i class="fas fa-heart" style="color: #f43f5e;"></i> Interests &amp; Passions</h2>
+            <p style="text-align: center; color: #94a3b8; max-width: 700px; margin: 0 auto 2rem;">Core motivations that fuel my continuous research, innovation, and civic contributions.</p>
+            
+            <div class="relatable-skills-grid">
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-shield-virus" style="color: #64ffda;"></i>
+                        <h3>Post-Quantum Defense</h3>
+                    </div>
+                    <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">Dedicated to solving the Harvest-Now-Decrypt-Later (HNDL) paradigm where adversaries intercept encrypted data today to decrypt on tomorrow's quantum computers. Researching lattice-based cryptography, QKD simulation, and post-decryption semantic barriers.</p>
+                </div>
+
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-network-wired" style="color: #a78bfa;"></i>
+                        <h3>Accessible IDPS for SMBs</h3>
+                    </div>
+                    <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">Passionate about democratizing enterprise-grade defense for small and medium businesses. Engineering low-cost, lightweight Netflow-based intrusion detection systems that run smoothly on modest hardware with minimal false positives.</p>
+                </div>
+
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-hands-helping" style="color: #34d399;"></i>
+                        <h3>Public Cyber Literacy (WeSeSo)</h3>
+                    </div>
+                    <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">Volunteering since 2020 with <em>WeSeSo (We Secure Society)</em>, educating schools, college students, and rural communities about digital scams, financial fraud vectors, password hygiene, and responsible digital citizenship.</p>
+                </div>
+
+                <div class="relatable-box">
+                    <div class="relatable-box-header">
+                        <i class="fas fa-file-contract" style="color: #38bdf8;"></i>
+                        <h3>IP Strategy &amp; Deep Tech Patents</h3>
+                    </div>
+                    <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.6;">Fascinated by the intersection of technological invention and intellectual property law. Experienced in prior-art search, patent landscaping, and patent claim structuring for emerging AI and software security innovations.</p>
+                </div>
+            </div>
+        </div>
+        
         <hr>
     </div>
-    
 
-    <div id="password-container">
+    <!-- Resume Password Section -->
+    <div id="password-container" class="glass-effect" style="border-radius: 14px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.1);">
         <h2>Resume Access</h2>
-        <p>Contact at shivduttchoubey@gmail.com to receive a copy of the resume</p>
+        <p>Contact at <a href="mailto:shivduttchoubey@gmail.com" style="color: #64ffda; text-decoration: none;">shivduttchoubey@gmail.com</a> to receive a copy of the resume</p>
         <input type="password" id="password-input" placeholder="Enter password">
         <button id="submit-btn">Submit</button>
         <div id="error-message"></div>
@@ -325,6 +534,10 @@
         <iframe id="pdf-viewer" frameborder="0"></iframe>
         <button id="close-btn">Close Resume</button>
     </div>
+
+    <footer id="site-footer"></footer>
+
+    <script src="header-footer.js"></script>
 
     <script>
         const CORRECT_PASSWORD = 'password';
@@ -354,7 +567,6 @@
             pdfViewer.src = '';
         });
 
-        // Add keyboard support for password input
         passwordInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 submitBtn.click();

@@ -1,408 +1,170 @@
-<html>
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
-  <link rel="icon" href="Media\favicon.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-<title>Development Path</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Media/favicon.jpg">
+    <script src="https://kit.fontawesome.com/9650a62e47.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Development Path | Shiv Dutt Choubey</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BFYTMLPND3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-<style>
+      gtag('config', 'G-BFYTMLPND3');
+    </script>
+    <style>
+        body {
+            background: #09090d;
+            font-family: 'Raleway', sans-serif;
+            color: #ffffff;
+            line-height: 1.7;
+            padding: 90px 15px 40px;
+        }
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+        .dev-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
+        .dev-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
 
-/* VARIABLES */
-:root {
-  --primary-color: #000000;
-  --secondary-color:#343434;
-}
+        .dev-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+            color: #64ffda;
+        }
 
-/* CSS RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
+        .dev-header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
 
-/* UTILITY CLASSES */
+        .dev-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 2.2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
 
-.btn {
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #fff;
-  margin-top: 4rem;
-  text-align: center;
-  display: inline-block;
-  padding: .6rem 1.5rem;
-  border-radius: 10px;
-  background-color: var(--primary-color);
-  transition: all .5s ease-in-out;
-}
+        .dev-card:hover {
+            transform: translateY(-4px);
+            border-color: #64ffda;
+        }
 
-.btn:hover {
-  background-color: rgb(230, 14, 14);
-}
+        .dev-card h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
 
+        .dev-card h2 i {
+            color: #64ffda;
+        }
 
-#navbar {
-          background-color: var(--primary-color);
-          color: #fff;
-          position: relative;
-          top: 0;
-          width: 100%;
-          /* z-index: 1000; */
-          padding: 1rem 0;
-          transition: all var(--transition-speed);
-      }
+        .dev-card p {
+            color: #cbd5e1;
+            margin-bottom: 1rem;
+        }
 
-      #navbar.glass-nav {
-          background: rgba(18, 18, 18, 0.8);
-          backdrop-filter: blur(10px);
-      }
+        .dev-card ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
 
-      #navbar ul {
-          display: flex;
-          justify-content: center;
-          flex-wrap: wrap;
-          gap: 1rem;
-          list-style: none;
-          
-      }
+        .dev-card ul li {
+            color: #94a3b8;
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
 
-      #navbar a {
-         font-family: cursive;
-          color: white;
-          text-decoration: none;
-          padding: 0.5rem 1rem;
-          border-radius: 8px;
-          transition: all var(--transition-speed);
-          font-weight: 600;
-          border-left: 3px #dde8dd solid;
-          border-right: 3px rgb(234, 238, 234) solid;
-          font-family: cursive;
-          display: inline-block;
-          padding: 1.2rem 2rem;
-          text-decoration: none;
-          font-size: 1.4rem;
-          font-weight: 500;
-      }
-
-      #navbar a:hover {
-          background: hwb(225 45% 52%);
-          transform: translateY(-2px);
-      }
-
-*,
-*:after,
-*:before {
-	box-sizing: border-box;
-}
-
-html {
-	color-scheme: light only;
-}
-
-body {
-	min-height: 100vh;
-	font-family:  "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue", Helvetica, Arial, sans-serif, system-ui;
-}
-
-body::before {
-  --size: 60px;
-  --line: hsl(0 0% 0% / 0.15);
-  content: '';
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  background: linear-gradient(
-        90deg,
-        var(--line) 1px,
-        transparent 1px var(--size)
-      )
-      50% 50% / var(--size) var(--size),
-    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
-      var(--size) var(--size);
-  mask: linear-gradient(-15deg, transparent 30%, white);
-  top: 0;
-  transform-style: flat;
-  pointer-events: none;
-  z-index: -1;
-}
-
-h1 {
-	margin: 0;
-	font-family: monospace;
-	text-transform: uppercase;
-}
-
-header {
-	padding: 2rem 0 2rem;
-}
-
-.content {
-	width: 700px;
-	max-width: calc(100% - 2rem);
-	margin: 0 auto;
-}
-
-.drop {
-	--drop: clamp(1.5rem, 1vw + 1rem, 6rem); 	
-	height: var(--drop);
-	width: calc(var(--drop) * 2.25);
-	aspect-ratio: 4 / 3;
-	float: left;
-	position: relative;
-	shape-outside: inset(0 0 0 0);
-}
-
-.drop::after {
-	content: "CSS";
-	position: absolute;
-	inset: 0;
-	display: grid;
-	line-height: 2rem;
-	font-size: calc(var(--drop) * 1);
-	font-weight: 600;
-	text-align: left;
-	place-items: start;
-}
-
-.quote-holder {
-	position: absolute;
-	left: calc(100% + (var(--gap) * 0.5));
-	top: calc(var(--y) * 1%);
-	height: calc(var(--size) * 2px);
-	aspect-ratio: 1;
-	background: radial-gradient(white 0% 50%, transparent 70%);
-	translate: -50% -50%;
-	border-radius: 50%;
-	margin: 0;
-	font-weight: 600;
-	font-size: 1.5rem;
-	text-align: center;
-	container-type: inline-size;
-	display: grid;
-	place-items: center;
-}
-
-blockquote {
-	margin: 0;
-	text-align: center;
-	font-size: 14cqi;
-}
-
-.columns {
-	display: flex;
-	gap: var(--gap);
-}
-
-:root {
-	--size: 100;
-	--y: 200;
-	--x: 50;
-	--gap: 1rem;
-}
-
-.outside {
-	position: relative;
-	width: calc(var(--size) * 1px);
-	height: calc(100% + (var(--size) * 1px));
-}
-
-.column:first-of-type .outside {
-	float: right;
-  shape-outside: circle(calc(var(--size) * 1px) at 100% calc(var(--y) * 1%));
-}
-.column:last-of-type .outside {
-	float: left;
-  shape-outside: circle(calc(var(--size) * 1px) at 0 calc(var(--y) * 1%));
-}
-
-.columns p {
-  font-family: jersery10;
-	font-size: .875rem;
-	text-align: justify;
-}
-
-.outside {
-	float: right;
-	shape-outside: circle(50%);
-}
-/* Social */
-.bear-link {
-  color: canvasText;
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
-  width: 48px;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  opacity: 0.8;
-}
-
-:where(.x-link, .bear-link):is(:hover, :focus-visible) {
-  opacity: 1;
-}
-.bear-link svg {
-  width: 75%;
-}
-
-/* QUOTE SECTION */
-.quote-container {
-    margin: 2rem auto;
-    max-width: 800px;
-    width: 90%; /* Add this to ensure it takes up most of the screen width */
-    padding: clamp(1rem, 4vw, 2rem); /* Responsive padding */
-    text-align: center;
-    box-sizing: border-box; /* Ensures padding doesn't add to width */
-}
-
-/* Add media query for very small screens */
-@media screen and (max-width: 480px) {
-    .quote-container {
-        margin: 1rem auto;
-        width: 95%; /* Even more width on mobile */
-        padding: 0.75rem;
-    }
-}
-
-blockquote {
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-blockquote footer {
-    margin-top: 1rem;
-    font-style: italic;
-    color: var(--text-light);
-    opacity: 0.8;
-}
-
-
-</style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BFYTMLPND3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BFYTMLPND3');
-</script>
-
+        .dev-card ul li i {
+            color: #34d399;
+            margin-top: 0.3rem;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-
 <body>
-   
-   <header id="about">
-    <nav id="navbar">
-      <ul>
-        <li><a href="about.html" target="blank">About</a></li>
-        <li><a href="projects_academics.html" target="blank">Projects</a></li>
-        <li><a href="certifications.html" target="blank">Certifications</a></li>
-        <li><a href="research.html" target="blank">Research</a></li>
-        <li><a href="future_prospects.html" target="blank">Future Prospects</a></li>
-        <li><a href="https://shivduttchoubey.substack.com/" target="blank">My Newsletter</a></li>
-       <li><a href="https://shivduttchoubey.github.io\landing_page.html#contact">Contact</a></li>
 
-      </ul>
-    </nav>
-    <hr>
-  </header>
-<!-- Quote Section -->
+    <header id="site-header"></header>
 
-<div class="quote-container glass-effect">
-  <blockquote class="animate-fade-in">
-      "The most important skill for a computer scientist is problem-solving.
-      <br>
-      Even if you don't know all the details of the technology you are using, if you can solve the problem, you can figure out how to do it."
-      <footer>- Bill Gates, Microsoft founder</footer>
-  </blockquote>
- </div>
-
-  <div class="content">
-    <header>
-      <h1>001: Aesthetic Layouts</h1>
-    </header>
-    <main>
-      <div class="columns">
-        <div class="column">
-          <p>
-            <span class="drop"></span>
-            lorem ipsum dolor sit amet, consectetur adipisicing, elit. Eos,
-            illo! Voluptatibus eos quas quasi in enim quaerat praesentium
-            voluptates facilis esse, sint, laudantium similique cumque laborum
-            at veniam hic sit.
-          </p>
-          <p>
-            Ipsam quidem beatae iusto harum obcaecati expedita sint
-            consequuntur, necessitatibus quos accusantium aliquam, eveniet,
-            optio ad deserunt laudantium! Nobis molestias at sint est natus
-            libero modi harum iusto consequatur quisquam.
-          </p>
-          <p>
-            Earum, deserunt quaerat id sapiente quae debitis, atque voluptatum
-            vitae, sint error magni architecto rerum possimus maiores porro
-            aut quidem rem exercitationem. Quae quaerat reprehenderit, sit
-            harum repellendus provident temporibus.
-          </p>
-          <p>
-            Consectetur, maxime iure in, quod itaque, dolorem atque nisi
-            inventore assumenda maiores veritatis aliquam illo accusantium
-            molestiae ex vero. Quaerat qui minima aut consequuntur fugiat
-            fugit nihil asperiores. Laborum, fugit.
-          </p>
-          <p>
-            Ipsam, nam. Incidunt quas deserunt corporis ullam non qui aut ab
-            fugiat pariatur sunt, molestias voluptatibus iste dolorum velit
-            dignissimos saepe facere nihil iure quos laborum cupiditate
-            dolores ducimus quaerat! lorem
-          </p>
+    <div class="dev-container">
+        <div class="dev-header">
+            <h1>Technical Development Path</h1>
+            <p>Architecting resilient software, low-overhead security systems, and high-performance protocols.</p>
         </div>
-        <div class="column">
-          <div class="outside"></div>
-          <p>
-            Obcaecati, quisquam ex illum aspernatur. Necessitatibus possimus
-            rerum excepturi aliquid totam laboriosam reprehenderit vitae cum
-            tempore porro voluptas, eaque quos saepe recusandae molestiae
-            maiores labore modi fuga adipisci eius odit.
-          </p>
-          <p>
-            Cum amet recusandae doloremque aspernatur veniam eligendi magnam
-            laborum atque aliquid aperiam corrupti doloribus accusamus dicta
-            soluta eius, non, dolorum expedita voluptas libero quas obcaecati
-            eaque aliquam! Recusandae, ex alias.
-          </p>
-          <p>
-            Adipisci tenetur libero quis aspernatur at quas reiciendis beatae
-            ut nisi velit est dolores sunt illum dignissimos deserunt
-            recusandae, dolorum culpa? Sed accusantium modi labore repellendus
-            unde, quos dicta nulla?
-          </p>
-          <p>
-            Eius velit, quaerat exercitationem voluptatem officia facere
-            quibusdam nisi odio veritatis id rerum nesciunt et quis
-            perferendis modi architecto magnam similique neque. Dolores quae
-            aliquid officiis quaerat debitis excepturi ullam.
-          </p>
-          <p>
-            Deleniti quas vero perspiciatis quae placeat pariatur officia
-            officiis dolores dicta totam cum consequatur similique, iste
-            veritatis quos distinctio dolor voluptatum, odio. Cupiditate sed
-            doloribus provident ullam at dolorem beatae!
-          </p>
-        </div>
-      </div>
-    </main>
-  </div>
 
+        <!-- Pillar 1: Systems & Core Programming -->
+        <div class="dev-card">
+            <h2><i class="fas fa-terminal"></i> 1. High-Performance Systems &amp; Secure Programming</h2>
+            <p>
+                A core tenet of my technical trajectory is mastering low-level systems programming in <strong>Modern C++</strong>, <strong>Python</strong>, and <strong>C</strong>, focusing on memory safety, concurrency, and Linux OS internals.
+            </p>
+            <p>
+                I actively develop modular security tools that interface directly with network sockets, kernel bypass mechanisms, and packet capturing engines (libpcap) to perform real-time packet inspection without degrading network throughput.
+            </p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Memory-safe design patterns preventing buffer overflows and use-after-free vulnerabilities.</li>
+                <li><i class="fas fa-check-circle"></i> High-performance asynchronous network engines handling high gigabit packet flows.</li>
+                <li><i class="fas fa-check-circle"></i> Automated test coverage, static analysis, and fuzz testing for mission-critical software.</li>
+            </ul>
+        </div>
+
+        <!-- Pillar 2: Cloud Security & CSPM Tooling -->
+        <div class="dev-card">
+            <h2><i class="fas fa-cloud"></i> 2. Cloud-Native Security &amp; CSPM Engineering</h2>
+            <p>
+                Expanding my work on <strong>QuantumPosture</strong>, my development path includes building enterprise-grade Cloud Security Posture Management (CSPM) and Kubernetes runtime security tooling.
+            </p>
+            <p>
+                I focus on automated posture audits that assess identity access management (IAM), TLS cipher suite enforcement, and encryption-at-rest configurations across multi-cloud environments (AWS, GCP, Azure).
+            </p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Automated vulnerability scanning across Docker container images and Kubernetes clusters.</li>
+                <li><i class="fas fa-check-circle"></i> Real-time drift detection comparing cloud infrastructure against security baselines (NIST, CIS Benchmarks).</li>
+                <li><i class="fas fa-check-circle"></i> Building lightweight REST APIs and CLI tools that seamlessly integrate into developer CI/CD pipelines.</li>
+            </ul>
+        </div>
+
+        <!-- Pillar 3: Embedded, IIoT & 5G-RAN Protocol Engineering -->
+        <div class="dev-card">
+            <h2><i class="fas fa-microchip"></i> 3. Embedded Security, IIoT &amp; 5G-RAN Telecommunications</h2>
+            <p>
+                Bridging software with hardware security: developing cryptographic modules for low-power microcontrollers (STM32, ESP32), industrial SCADA systems, and 5G Radio Access Networks (5G-RAN).
+            </p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Advancing <strong>LoRa ImageSum</strong> for ultra-low-power secure telemetry transmission across noisy channels.</li>
+                <li><i class="fas fa-check-circle"></i> Implementing mutual TLS and hardware root-of-trust (TPM / Secure Enclaves) in Healthcare IoT devices like <strong>LiveMedQR</strong>.</li>
+                <li><i class="fas fa-check-circle"></i> Contributing to national presentations for the Department of Telecommunications (DoT) 5G Innovation Hackathon.</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="future_prospects.html" style="display: inline-flex; align-items: center; gap: 0.6rem; color: #64ffda; text-decoration: none; font-weight: 700; font-size: 1.1rem; padding: 0.8rem 1.6rem; background: rgba(100, 255, 218, 0.1); border: 1px solid rgba(100, 255, 218, 0.3); border-radius: 8px;">
+                <i class="fas fa-arrow-left"></i> Back to Future Prospects
+            </a>
+        </div>
+    </div>
+
+    <footer id="site-footer"></footer>
+
+    <script src="header-footer.js"></script>
 </body>
-
 </html>
