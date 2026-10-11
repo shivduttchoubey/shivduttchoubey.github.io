@@ -19,7 +19,7 @@ If you discover a security vulnerability in this repository or the website, plea
 
 ### Preferred Method
 
-Please use **GitHub's private vulnerability reporting** feature for this repository, if available.
+Please use **GitHub's private vulnerability reporting** feature for this repository - <link for github reporting>
 
 This allows security issues to be reported privately to the repository maintainers without exposing sensitive information publicly.
 
